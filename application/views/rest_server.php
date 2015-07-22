@@ -95,6 +95,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <ul>
             <li><a href="<?php echo site_url('api/example/users'); ?>">Users</a> - defaulting to JSON</li>
             <li><a href="<?php echo site_url('api/example/users/format/csv'); ?>">Users</a> - get it in CSV</li>
+            <li><a href="<?php echo site_url('api/example/users/id/1'); ?>">User #1</a> - defaulting to JSON  (users/id/1)</li>
         </ul>
 
     </div>
