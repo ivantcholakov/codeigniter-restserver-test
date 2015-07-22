@@ -74,6 +74,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         <h2><a href="<?php echo site_url(); ?>">Home</a></h2>
 
+        <p>
+            See the article
+            <a href="http://net.tutsplus.com/tutorials/php/working-with-restful-services-in-codeigniter-2/" target="_blank">
+                http://net.tutsplus.com/tutorials/php/working-with-restful-services-in-codeigniter-2/
+            </a>
+        </p>
+
+        <p>
+            Click on the links to check whether the REST server is working.
+        </p>
+
+        <ul>
+            <li><a href="<?php echo site_url('api/example/users'); ?>">Users</a> - defaulting to JSON</li>
+        </ul>
+
     </div>
 
     <p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
