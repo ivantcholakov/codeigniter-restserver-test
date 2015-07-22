@@ -289,7 +289,7 @@ class Format {
 
         foreach ($data as $row)
         {
-            // Suppressing "array to string conversion" notice.
+            // Suppressing the "array to string conversion" notice.
             // Keep the "evil" @ here.
             $row = @ array_map('strval', $row);
 
@@ -368,7 +368,7 @@ class Format {
                 break;
             }
 
-            // Suppressing "array to string conversion" notice.
+            // Suppressing the "array to string conversion" notice.
             // Keep the "evil" @ here.
             $record = @ array_map('strval', $record);
 
