@@ -30,7 +30,7 @@ class Example extends REST_Controller {
         $this->methods['user_delete']['limit'] = 50; // 50 requests per hour per user/key
     }
 
-    public function users_get($id = NULL)
+    public function users_get()
     {
         // Users from a data store e.g. database
         // $user = $this->some_model->getSomething($id);
@@ -40,8 +40,10 @@ class Example extends REST_Controller {
             ['id' => 3, 'name' => 'Jane', 'email' => 'jane@example.com', 'fact' => 'Lives in the USA', ['hobbies' => ['guitar', 'cycling']]],
         ];
 
+        $id = $this->get('id');
+
         // If the id parameter and query parameter don't exist, return all users instead
-        if ($id === NULL && $this->get('id') === NULL)
+        if ($id === NULL)
         {
             // Check if the users data store contains users (in case the database result returns NULL)
             if ($users)
@@ -57,15 +59,6 @@ class Example extends REST_Controller {
                     'error' => 'No users were found'
                 ], REST_Controller::HTTP_NOT_FOUND); // NOT_FOUND (404) being the HTTP response code
             }
-
-        }
-
-
-        // If the id has not been passed via the URL e.g. example/users/:id, then
-        // check the id query parameter id=? instead
-        if ($id === NULL)
-        {
-            $id = $this->get('id');
         }
 
         // Cast as an int
