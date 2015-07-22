@@ -101,12 +101,48 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <li><a href="<?php echo site_url('api/example/users/id/1/format/xml'); ?>">User #1</a> - get it in XML (users/id/1/format/xml)</li>
             <li><a href="<?php echo site_url('api/example/users/id/1?format=xml'); ?>">User #1</a> - get it in XML (users/id/1?format=xml)</li>
             <li><a href="<?php echo site_url('api/example/users/1.xml'); ?>">User #1</a> - get it in XML (users/1.xml)</li>
+            <li><a id="ajax" href="<?php echo site_url('api/example/users/format/json'); ?>">Users</a> - get it in JSON (AJAX request)</li>
         </ol>
 
     </div>
 
     <p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
 </div>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+//<![CDATA[
+
+    $(function() {
+
+        $("#ajax").on("click", function(evt) {
+
+            evt.preventDefault();
+
+            $.ajax({
+
+                url: $(this).attr("href"), // URL from the link that was clicked on.
+
+                success: function(data, textStatus, jqXHR) {
+
+                    if (window.JSON && window.JSON.stringify) {
+                        data = window.JSON.stringify(data);
+                    }
+
+                    // The 'data' parameter is an array of objects that can be looped over.
+                    alert(data);
+                },
+
+                error: function(jqXHR, textStatus, errorThrown) {
+                    alert('Oh no! A problem with the AJAX request!');
+                }
+            });
+        });
+    });
+
+//]]>
+</script>
 
 </body>
 </html>
