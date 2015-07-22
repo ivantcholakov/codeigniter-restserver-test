@@ -82,11 +82,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </p>
 
         <p>
+            The master project repository is
+            <a href="https://github.com/chriskacerguis/codeigniter-restserver" target="_blank">
+                https://github.com/chriskacerguis/codeigniter-restserver
+            </a>
+        </p>
+
+        <p>
             Click on the links to check whether the REST server is working.
         </p>
 
         <ul>
             <li><a href="<?php echo site_url('api/example/users'); ?>">Users</a> - defaulting to JSON</li>
+            <li><a href="<?php echo site_url('api/example/users/format/csv'); ?>">Users</a> - get it in CSV</li>
         </ul>
 
     </div>
