@@ -61,21 +61,32 @@ class Example extends REST_Controller {
             }
         }
 
-        // Cast as an int
         $id = (int) $id;
 
-        // If not a valid id
+        // Validate the id.
         if ($id <= 0)
         {
-            // Set the response and exit
+            // Invalid id, set the response and exit.
             $this->response(NULL, REST_Controller::HTTP_BAD_REQUEST); // BAD_REQUEST (400) being the HTTP response code
         }
 
-        // Get the user from the array, by retrieving the id from the GET request
-        $user = isset($users[$id]) ? $users[$id] : NULL;
+        // Get the user from the array, using the id as key for retreival.
+        // Usually a model is to be used for this.
 
-        // If a user exists in the data store e.g. database
-        if ($user)
+        $user = NULL;
+
+        if (!empty($users))
+        {
+            foreach ($users as $key => $value)
+            {
+                if (isset($value['id']) && $value['id'] === $id)
+                {
+                    $user = $value;
+                }
+            }
+        }
+
+        if (!empty($user))
         {
             $this->set_response($user, REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
         }
