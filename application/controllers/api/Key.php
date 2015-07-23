@@ -58,8 +58,6 @@ class Key extends REST_Controller {
         }
     }
 
-    // --------------------------------------------------------------------
-
     /**
      * Key Delete
      * Remove a key from the database to stop it working
@@ -90,8 +88,6 @@ class Key extends REST_Controller {
             'success' => 'API key was deleted'
             ], REST_Controller::HTTP_NO_CONTENT); // NO_CONTENT (204) being the HTTP response code
     }
-
-    // --------------------------------------------------------------------
 
     /**
      * Update Key
@@ -132,8 +128,6 @@ class Key extends REST_Controller {
         }
     }
 
-    // --------------------------------------------------------------------
-
     /**
      * Update Key
      * Change the level
@@ -171,8 +165,6 @@ class Key extends REST_Controller {
             ], REST_Controller::HTTP_INTERNAL_SERVER_ERROR); // INTERNAL_SERVER_ERROR (500) being the HTTP response code
         }
     }
-
-    // --------------------------------------------------------------------
 
     /**
      * Regenerate Key
@@ -219,8 +211,6 @@ class Key extends REST_Controller {
         }
     }
 
-    // --------------------------------------------------------------------
-
     /* Helper Methods */
 
     private function _generate_key()
@@ -243,8 +233,6 @@ class Key extends REST_Controller {
         return $new_key;
     }
 
-    // --------------------------------------------------------------------
-
     /* Private Data Methods */
 
     private function _get_key($key)
@@ -255,16 +243,12 @@ class Key extends REST_Controller {
             ->row();
     }
 
-    // --------------------------------------------------------------------
-
     private function _key_exists($key)
     {
         return $this->db
             ->where(config_item('rest_key_column'), $key)
             ->count_all_results(config_item('rest_keys_table')) > 0;
     }
-
-    // --------------------------------------------------------------------
 
     private function _insert_key($key, $data)
     {
@@ -276,8 +260,6 @@ class Key extends REST_Controller {
             ->insert(config_item('rest_keys_table'));
     }
 
-    // --------------------------------------------------------------------
-
     private function _update_key($key, $data)
     {
         return $this->db
@@ -285,12 +267,11 @@ class Key extends REST_Controller {
             ->update(config_item('rest_keys_table'), $data);
     }
 
-    // --------------------------------------------------------------------
-
     private function _delete_key($key)
     {
         return $this->db
             ->where(config_item('rest_key_column'), $key)
             ->delete(config_item('rest_keys_table'));
     }
+
 }
