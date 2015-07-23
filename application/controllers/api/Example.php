@@ -114,17 +114,9 @@ class Example extends REST_Controller {
 
     public function users_delete()
     {
-        // If the id has not been passed via the URL e.g. example/users/:id, then
-        // check the id query parameter id=? instead
-        if ($id === NULL)
-        {
-            $id = $this->get('id');
-        }
+        $id = (int) $this->get('id');
 
-        // Cast as an int
-        $id = (int) $id;
-
-        // If not a valid id
+        // Validate the id.
         if ($id <= 0)
         {
             // Set the response and exit
