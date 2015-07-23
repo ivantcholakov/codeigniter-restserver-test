@@ -26,11 +26,10 @@ class Key extends REST_Controller {
         ];
 
     /**
-     * Key Create
      * Insert a key into the database
      *
-     * @access    public
-     * @return    void
+     * @access public
+     * @return void
      */
     public function index_put()
     {
@@ -59,11 +58,10 @@ class Key extends REST_Controller {
     }
 
     /**
-     * Key Delete
      * Remove a key from the database to stop it working
      *
-     * @access    public
-     * @return    void
+     * @access public
+     * @return void
      */
     public function index_delete()
     {
@@ -90,11 +88,10 @@ class Key extends REST_Controller {
     }
 
     /**
-     * Update Key
      * Change the level
      *
-     * @access    public
-     * @return    void
+     * @access public
+     * @return void
      */
     public function level_post()
     {
@@ -129,11 +126,10 @@ class Key extends REST_Controller {
     }
 
     /**
-     * Update Key
-     * Change the level
+     * Suspent a key
      *
-     * @access    public
-     * @return    void
+     * @access public
+     * @return void
      */
     public function suspend_post()
     {
@@ -167,11 +163,10 @@ class Key extends REST_Controller {
     }
 
     /**
-     * Regenerate Key
-     * Remove a key from the database to stop it working
+     * Regenerate a key
      *
-     * @access    public
-     * @return    void
+     * @access public
+     * @return void
      */
     public function regenerate_post()
     {
