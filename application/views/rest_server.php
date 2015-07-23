@@ -127,23 +127,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                 url: $(this).attr("href"), // URL from the link that was clicked on.
 
-                success: function(data, textStatus, jqXHR) {
+            }).done(function (data) {
 
-                    // The 'data' parameter is an array of objects that can be looped over.
+                // The 'data' parameter is an array of objects that can be looped over.
 
-                    if (window.JSON && window.JSON.stringify) {
+                alert(window.JSON.stringify(data));
 
-                        // Let us display data in this example
-                        // in a relatively friendly manner.
-                        data = window.JSON.stringify(data);
-                    }
+            }).fail(function () {
 
-                    alert(data);
-                },
-
-                error: function(jqXHR, textStatus, errorThrown) {
-                    alert('Oh no! A problem with the AJAX request!');
-                }
+                alert('Oh no! A problem with the AJAX request!');
             });
         });
     });

@@ -126,7 +126,7 @@ class Key extends REST_Controller {
     }
 
     /**
-     * Suspent a key
+     * Suspend a key
      *
      * @access public
      * @return void
@@ -223,8 +223,7 @@ class Key extends REST_Controller {
 
             $new_key = substr($salt, 0, config_item('rest_key_length'));
         }
-        while (self::_key_exists($new_key));
-        // Already in the DB? Fail. Try again
+        while ($this->_key_exists($new_key));
 
         return $new_key;
     }
