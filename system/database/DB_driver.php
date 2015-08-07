@@ -451,7 +451,7 @@ abstract class CI_DB_driver {
 	 *
 	 * This is just a dummy method that all drivers will override.
 	 *
-	 * @return      mixed
+	 * @return	mixed
 	 */
 	public function db_connect()
 	{
@@ -481,7 +481,7 @@ abstract class CI_DB_driver {
 	 * This is just a dummy method to allow drivers without such
 	 * functionality to not declare it, while others will override it.
 	 *
-	 * @return      void
+	 * @return	void
 	 */
 	public function reconnect()
 	{
@@ -495,7 +495,7 @@ abstract class CI_DB_driver {
 	 * This is just a dummy method to allow drivers without such
 	 * functionality to not declare it, while others will override it.
 	 *
-	 * @return      bool
+	 * @return	bool
 	 */
 	public function db_select()
 	{
@@ -647,7 +647,10 @@ abstract class CI_DB_driver {
 			}
 
 			// This will trigger a rollback if transactions are being used
-			$this->_trans_status = FALSE;
+			if ($this->_trans_depth !== 0)
+			{
+				$this->_trans_status = FALSE;
+			}
 
 			// Grab the error now, as we might run some additional queries before displaying the error
 			$error = $this->error();
