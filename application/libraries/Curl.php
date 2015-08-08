@@ -113,6 +113,14 @@ class Curl {
      * Use these methods to build up more complex queries
      * ================================================================================= */
 
+    // Added by Ivan Tcholakov, 08-AUG-2015.
+    public function get()
+    {
+        // Do nothing, just support method chaining.
+        return $this;
+    }
+    //
+
     public function post($params = array(), $options = array())
     {
         // If its an array (instead of a query string) then format it correctly
