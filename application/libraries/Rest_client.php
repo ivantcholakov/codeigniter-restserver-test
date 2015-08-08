@@ -109,7 +109,6 @@ class Rest_client
 
         isset($config['ssl_verify_peer']) && $this->ssl_verify_peer = $config['ssl_verify_peer'];
         isset($config['ssl_cainfo']) && $this->ssl_cainfo = $config['ssl_cainfo'];
-
     }
 
     /**
@@ -193,6 +192,7 @@ class Rest_client
             $this->api_name = $name;
         }
 
+        return $this;
     }
 
     /**
@@ -222,6 +222,8 @@ class Rest_client
     public function header($header)
     {
         $this->_ci->curl->http_header($header);
+
+        return $this;
     }
 
     /**
@@ -403,6 +405,8 @@ class Rest_client
     public function option($code, $value)
     {
         $this->_ci->curl->option($code, $value);
+
+        return $this;
     }
 
     /**
@@ -419,6 +423,8 @@ class Rest_client
 
         // Pass these attributes on to the curl library
         call_user_func_array(array($this->_ci->curl, 'http_header'), $params);
+
+        return $this;
     }
 
     /**
@@ -435,7 +441,7 @@ class Rest_client
         // It is a supported format, so just run its formatting method
         if (array_key_exists($this->format, $this->supported_formats))
         {
-            return $this->{"_".$this->format}($response);
+            return $this->{'_'.$this->format}($response);
         }
 
         // Find out what format the data was returned in
@@ -444,7 +450,7 @@ class Rest_client
         // If they sent through more than just mime, strip it off
         if (strpos($returned_mime, ';'))
         {
-            list($returned_mime)=explode(';', $returned_mime);
+            list($returned_mime) = explode(';', $returned_mime);
         }
 
         $returned_mime = trim($returned_mime);
