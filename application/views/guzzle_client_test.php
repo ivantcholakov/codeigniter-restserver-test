@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Accessing the REST Server Using the Rest Client Library</title>
+    <title>Accessing the REST Server Using the Guzzle HTTP Client</title>
 
     <style>
 
@@ -68,7 +68,7 @@
 <body>
 
 <div id="container">
-    <h1>Accessing the REST Server Using the Rest Client Library</h1>
+    <h1>Accessing the REST Server Using the Guzzle HTTP Client</h1>
 
     <div id="body">
 
@@ -81,19 +81,33 @@
 
         <code><pre><?php echo html_escape($code_example); ?></pre></code>
 
-        <h3>
-            Result:
-        </h3>
+        <?php if (is_php($php_required)): ?>
 
-        <code><pre><?php var_dump($result); ?></pre></code>
+            <h3>
+                Result:
+            </h3>
 
-<?php /*
-        <h3>
-            Debug Information:
-        </h3>
+            <code><pre><?php var_dump($result); ?></pre></code>
 
-        <?php $this->rest_client->debug(); ?>
-*/ ?>
+            <h3>
+                Status Code:
+            </h3>
+
+            <code><pre><?php echo html_escape($status_code); ?></pre></code>
+
+            <h3>
+                Content Type:
+            </h3>
+
+            <code><pre><?php echo html_escape($content_type); ?></pre></code>
+
+        <?php else: ?>
+
+            <h3>
+                PHP <?php echo $php_required ?> is required for this demo to work.
+            </h3>
+
+        <?php endif ?>
 
     </div>
 

@@ -15,6 +15,7 @@
         margin: 40px;
         font: 16px/20px normal Helvetica, Arial, sans-serif;
         color: #4F5155;
+        word-wrap: break-word;
     }
 
     a {
@@ -87,8 +88,9 @@
             </a>
         </p>
 
-        <h2><a href="<?php echo site_url('curl-test'); ?>">Accessing the REST Server Using the Curl Library</a></h2>
-        <h2><a href="<?php echo site_url('rest_client-test'); ?>">Accessing the REST Server Using the Rest Client Library</a></h2>
+        <h3><a href="<?php echo site_url('curl-test'); ?>">Accessing the REST Server Using the Curl Library</a></h3>
+        <h3><a href="<?php echo site_url('rest_client-test'); ?>">Accessing the REST Server Using the Rest Client Library</a></h3>
+        <h3><a href="<?php echo site_url('guzzle_client-test'); ?>">Accessing the REST Server Using the Guzzle HTTP Client</a></h3>
 
         <h3>
             Click on the links below to check whether the REST server is working.
