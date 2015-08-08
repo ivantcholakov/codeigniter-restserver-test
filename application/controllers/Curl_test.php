@@ -20,8 +20,7 @@ class Curl_test extends CI_Controller {
         \$password = '1234';
         \$this->curl->http_login(\$username, \$password);
 
-        \$this->curl->get();
-        \$result = \$this->curl->execute();
+        \$result = \$this->curl->get()->execute();
 
 EOT;
 
