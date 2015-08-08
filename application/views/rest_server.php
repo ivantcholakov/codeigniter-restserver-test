@@ -1,8 +1,5 @@
-<?php
-    defined('BASEPATH') OR exit('No direct script access allowed');
-?>
-
-<!DOCTYPE html>
+<?php defined('BASEPATH') OR exit('No direct script access allowed');
+?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -90,9 +87,12 @@
             </a>
         </p>
 
-        <p>
-            Click on the links to check whether the REST server is working.
-        </p>
+        <h2><a href="<?php echo site_url('curl-test'); ?>">Accessing the REST Server Using the Curl Library</a></h2>
+        <h2><a href="<?php echo site_url('rest_client-test'); ?>">Accessing the REST Server Using the Rest Client Library</a></h2>
+
+        <h3>
+            Click on the links below to check whether the REST server is working.
+        </h3>
 
         <ol>
             <li><a href="<?php echo site_url('api/example/users'); ?>">Users</a> - defaulting to JSON</li>

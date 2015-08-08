@@ -3,22 +3,22 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Welcome to CodeIgniter</title>
+    <title>Accessing the REST Server Using the Rest Client Library</title>
 
-    <style type="text/css">
+    <style>
 
     ::selection { background-color: #E13300; color: white; }
     ::-moz-selection { background-color: #E13300; color: white; }
 
     body {
-        background-color: #fff;
+        background-color: #FFF;
         margin: 40px;
         font: 16px/20px normal Helvetica, Arial, sans-serif;
         color: #4F5155;
     }
 
     a {
-        color: #003399;
+        color: #039;
         background-color: transparent;
         font-weight: normal;
     }
@@ -67,27 +67,33 @@
 <body>
 
 <div id="container">
-    <h1>Welcome to CodeIgniter!</h1>
+    <h1>Accessing the REST Server Using the Rest Client Library</h1>
 
     <div id="body">
 
-        <h2><a href="<?php echo site_url('rest-server'); ?>">REST Server Tests</a></h2>
+        <h2><a href="<?php echo site_url(); ?>">Home</a></h2>
+        <h2><a href="<?php echo site_url('rest-server'); ?>">Tests Home</a></h2>
 
-        <?php if (file_exists(FCPATH.'documentation/index.html')) : ?>
-        <h2><a href="<?php echo base_url('documentation/index.html'); ?>" target="_blank">REST Server Documentation</a></h2>
-        <?php endif ?>
+        <h3>
+            Code Example:
+        </h3>
 
-        <p>The page you are looking at is being generated dynamically by CodeIgniter.</p>
+        <code><pre><?php echo html_escape($code_example); ?></pre></code>
 
-        <p>If you would like to edit this page you'll find it located at:</p>
-        <code>application/views/welcome_message.php</code>
+        <h3>
+            Result:
+        </h3>
 
-        <p>The corresponding controller for this page is found at:</p>
-        <code>application/controllers/Welcome.php</code>
+        <code><pre><?php var_dump($result); ?></pre></code>
 
-        <?php if (file_exists(FCPATH.'user_guide/index.html')) : ?>
-        <p>If you are exploring CodeIgniter for the very first time, you should start by reading the <a href="<?php echo base_url('user_guide/index.html'); ?>" target="_blank">User Guide</a>.</p>
-        <?php endif ?>
+<?php /*
+        <h3>
+            Debug Information:
+        </h3>
+
+        <?php $this->rest_client->debug(); ?>
+*/ ?>
+
     </div>
 
     <p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
