@@ -14,10 +14,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @link            https://github.com/chriskacerguis/codeigniter-restserver
  * @version         3.0.0
  */
-// Modified by Ivan Tcholakov, 14-FEB-2012.
-//abstract class REST_Controller extends CI_Controller {
 abstract class REST_Controller extends CI_Controller {
-//
 
     // Note: Only the widely used HTTP status codes are documented
 
@@ -309,7 +306,6 @@ abstract class REST_Controller extends CI_Controller {
             'array' => 'application/json',
             'csv' => 'application/csv',
             'html' => 'text/html',
-            'debug' => 'text/html',
             'jsonp' => 'application/javascript',
             'php' => 'text/plain',
             'serialized' => 'application/vnd.php.serialized',

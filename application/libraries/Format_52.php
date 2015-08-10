@@ -304,31 +304,6 @@ class Format {
     }
 
     /**
-     * Format data as HTML - debug preview.
-     *
-     * @param mixed|NULL $data Optional data to pass, so as to override the data passed
-     * to the constructor
-     * @return string
-     */
-    public function to_debug($data = NULL)
-    {
-        // If no data is passed as a parameter, then use the data passed
-        // via the constructor
-        if ($data === NULL && func_num_args() === 0)
-        {
-            $data = $this->_data;
-        }
-
-        // Cast as an array if not already
-        if (is_array($data) === FALSE)
-        {
-            $data = (array) $data;
-        }
-
-        return print_d($data);
-    }
-
-    /**
      * @link http://www.metashock.de/2014/02/create-csv-file-in-memory-php/
      * @param mixed|NULL $data Optional data to pass, so as to override the data passed
      * to the constructor

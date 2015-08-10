@@ -1037,7 +1037,10 @@ abstract class REST_Controller extends CI_Controller {
                 'params' => $this->_args ? ($this->config->item('rest_logs_json_params') === TRUE ? json_encode($this->_args) : serialize($this->_args)) : NULL,
                 'api_key' => isset($this->rest->key) ? $this->rest->key : '',
                 'ip_address' => $this->input->ip_address(),
-                'time' => now(), // Used to be: function_exists('now') ? now() : time()
+                // Modified by Ivan Tcholakov, 28-JUN-2015.
+                //'time' => now(), // Used to be: function_exists('now') ? now() : time()
+                'time' => function_exists('now') ? now() : time(),
+                //
                 'authorized' => $authorized
             ]);
 
@@ -1707,7 +1710,10 @@ abstract class REST_Controller extends CI_Controller {
             return FALSE;
         }
 
-        if (ldap_count_entries($ldapconn, $res_id) !== 1)
+        // Modified by Ivan Tcholakov, 10-JUL-2015.
+        //if (ldap_count_entries($ldapconn, $res_id) !== 1)
+        if (ldap_count_entries($ldapconn, $res_id) != 1)
+        //
         {
             log_message('error', 'LDAP Auth: Failure, username ' . $username . 'found more than once');
             return FALSE;
@@ -2067,6 +2073,13 @@ abstract class REST_Controller extends CI_Controller {
      */
     protected function _log_response_code($http_code)
     {
+        // Added by Ivan Tcholakov, 07-APR-2015.
+        if (!isset($this->rest->db) || !is_object($this->rest->db))
+        {
+            return FALSE;
+        }
+        //
+
         $payload['response_code'] = $http_code;
 
         return $this->rest->db->update(
