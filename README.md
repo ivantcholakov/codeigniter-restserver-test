@@ -2,7 +2,7 @@
 
 A temporary repository for testing https://github.com/chriskacerguis/codeigniter-restserver
 
-Version: 2.7.2.15
+Version: 2.7.2.16
 
 Live demo: http://iridadesign.com/codeigniter-restserver-test/rest-server
 
