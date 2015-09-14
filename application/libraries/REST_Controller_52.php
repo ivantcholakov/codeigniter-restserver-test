@@ -1354,13 +1354,10 @@ abstract class REST_Controller extends CI_Controller {
         {
             $this->request->body = $this->input->raw_input_stream;
         }
-        else
+        else if ($this->input->method() === 'put')
         {
-            // If no filetype is provided, then there are probably just arguments
-            if ($this->input->method() === 'put')
-            {
-                $this->_put_args = $this->input->input_stream();
-            }
+           // If no filetype is provided, then there are probably just arguments
+           $this->_put_args = $this->input->input_stream();
         }
     }
 
@@ -1407,13 +1404,10 @@ abstract class REST_Controller extends CI_Controller {
         {
             $this->request->body = $this->input->raw_input_stream;
         }
-        else
+        else if ($this->input->method() === 'patch')
         {
             // If no filetype is provided, then there are probably just arguments
-            if ($this->input->method() === 'patch')
-            {
-                $this->_patch_args = $this->input->input_stream();
-            }
+            $this->_patch_args = $this->input->input_stream();
         }
     }
 

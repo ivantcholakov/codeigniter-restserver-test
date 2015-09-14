@@ -124,7 +124,7 @@
     var App = App || {};
 
     // Basic rest module using an IIFE as a way of enclosing private variables
-    App.rest = (function ($, window) {
+    App.rest = (function (window, $) {
         // Fields
 
         // Cache the jQuery selector
@@ -177,7 +177,7 @@
                 bind();
             }
         };
-    })(jQuery, window);
+    })(window, jQuery);
 
     // DOM ready event
     $(function () {
