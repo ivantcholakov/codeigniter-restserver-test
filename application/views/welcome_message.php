@@ -35,6 +35,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         padding: 14px 15px 10px 15px;
     }
 
+    .readme h1 {
+        padding-left: 0;
+    }
+
     code {
         font-family: Consolas, Monaco, Courier New, Courier, monospace;
         font-size: 16px;
@@ -90,6 +94,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <?php if (file_exists(FCPATH.'user_guide/index.html')) : ?>
         <p>If you are exploring CodeIgniter for the very first time, you should start by reading the <a href="<?php echo base_url('user_guide/index.html'); ?>" target="_blank">User Guide</a>.</p>
         <?php endif ?>
+
+        <?php if ($readme != '') : ?>
+        <div class="readme">
+            <?php echo $readme; ?>
+        </div>
+        <?php endif ?>
+
     </div>
 
     <p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
