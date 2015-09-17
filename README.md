@@ -4,9 +4,9 @@ https://github.com/ivantcholakov/codeigniter-restserver-test
 
 A temporary repository for testing https://github.com/chriskacerguis/codeigniter-restserver
 
-Version: 2.7.2.24
+Version: 2.7.2.25
 
-Live demo: http://iridadesign.com/codeigniter-restserver-test/rest-server
+Live demo: http://iridadesign.com/codeigniter-restserver-test
 
 License for the original code: The MIT License http://opensource.org/licenses/MIT
 
