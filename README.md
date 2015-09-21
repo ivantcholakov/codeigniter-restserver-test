@@ -4,7 +4,7 @@ https://github.com/ivantcholakov/codeigniter-restserver-test
 
 A temporary repository for testing https://github.com/chriskacerguis/codeigniter-restserver
 
-Version: 2.7.2.26
+Version: 2.7.2.27
 
 Live demo: http://iridadesign.com/codeigniter-restserver-test
 
