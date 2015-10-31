@@ -17,7 +17,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | environments.
 |
 */
-$config['base_url'] = '';
+// Modified by Ivan Tcholakov, 01-NOV-2015.
+// A customized URL detector is used here.
+//$config['base_url'] = '';
+$_helper_dir = APPPATH.'helpers/';
+require_once $_helper_dir.'resolve_path.php';
+require_once $_helper_dir.'merge_paths.php';
+require_once $_helper_dir.'detect_https.php';
+require_once $_helper_dir.'detect_host.php';
+require_once $_helper_dir.'detect_url.php';
+$_detect_url = detect_url();
+$config['base_url'] = $_detect_url['base_url'];
+//
 
 /*
 |--------------------------------------------------------------------------
