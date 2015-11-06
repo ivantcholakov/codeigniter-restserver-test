@@ -88,13 +88,8 @@
             </a>
         </p>
 
-        <h3><a href="<?php echo site_url('curl-test'); ?>">Accessing the REST Server Using the Curl Library</a></h3>
-        <h3><a href="<?php echo site_url('rest-client-test'); ?>">Accessing the REST Server Using the Rest Client Library</a></h3>
-        <h3><a href="<?php echo site_url('requests-client-test'); ?>">Accessing the REST Server Using the Requests HTTP Library</a></h3>
-        <h3><a href="<?php echo site_url('guzzle-client-test'); ?>">Accessing the REST Server Using the Guzzle HTTP Client</a></h3>
-
         <h3>
-            Click on the links below to check whether the REST server is working.
+            Basic Tests: Click on the links below to check whether the REST server is working.
         </h3>
 
         <ol>
@@ -111,6 +106,15 @@
             <li><a href="<?php echo site_url('api/example/users/format/html'); ?>">Users</a> - get it in HTML (users/format/html)</li>
             <li><a href="<?php echo site_url('api/example/users?format=html'); ?>">Users</a> - get it in HTML (users?format=html)</li>
         </ol>
+
+        <h3>
+            Testing various HTTP clients
+        </h3>
+
+        <h3><a href="<?php echo site_url('curl-test'); ?>">Accessing the REST Server Using the Curl Library</a></h3>
+        <h3><a href="<?php echo site_url('rest-client-test'); ?>">Accessing the REST Server Using the Rest Client Library</a></h3>
+        <h3><a href="<?php echo site_url('requests-client-test'); ?>">Accessing the REST Server Using the Requests HTTP Library</a></h3>
+        <h3><a href="<?php echo site_url('guzzle-client-test'); ?>">Accessing the REST Server Using the Guzzle HTTP Client</a></h3>
 
     </div>
 
