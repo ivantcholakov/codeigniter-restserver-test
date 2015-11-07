@@ -116,6 +116,12 @@
         <h3><a href="<?php echo site_url('requests-client-test'); ?>">Accessing the REST Server Using the Requests HTTP Library</a></h3>
         <h3><a href="<?php echo site_url('guzzle-client-test'); ?>">Accessing the REST Server Using the Guzzle HTTP Client</a></h3>
 
+        <h3>
+            Other
+        </h3>
+
+        <h3><a href="<?php echo site_url('post-test'); ?>">Testing a POST request</a></h3>
+
     </div>
 
     <p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
