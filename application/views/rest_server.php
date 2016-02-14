@@ -136,6 +136,8 @@
     // Basic rest module using an IIFE as a way of enclosing private variables
     App.rest = (function (window, $) {
         // Fields
+        var _alert = window.alert;
+        var _JSON = window.JSON;
 
         // Cache the jQuery selector
         var _$ajax = null;
@@ -149,7 +151,7 @@
          */
         function _ajaxDone(data) {
             // The 'data' parameter is an array of objects that can be iterated over
-            window.alert(window.JSON.stringify(data, null, 2));
+            _alert(_JSON.stringify(data, null, 2));
         }
 
         /**
@@ -158,7 +160,7 @@
          * @return {undefined}
          */
         function _ajaxFail() {
-            window.alert('Oh no! A problem with the Ajax request!');
+            _alert('Oh no! A problem with the Ajax request!');
         }
 
         /**
@@ -208,7 +210,7 @@
                 _bindEvents();
             }
         };
-    })(window, window.jQuery);
+    }(window, window.jQuery));
 
     // DOM ready event
     $(function () {
