@@ -321,7 +321,7 @@ class CI_Loader {
 		}
 
 		$model = ucfirst($model);
-		if ( ! class_exists($model))
+		if ( ! class_exists($model, FALSE))
 		{
 			foreach ($this->_ci_model_paths as $mod_path)
 			{
@@ -718,9 +718,16 @@ class CI_Loader {
 	{
 		if (is_array($library))
 		{
-			foreach ($library as $driver)
+			foreach ($library as $key => $value)
 			{
-				$this->driver($driver);
+				if (is_int($key))
+				{
+					$this->driver($value, $params);
+				}
+				else
+				{
+					$this->driver($key, $params, $value);
+				}
 			}
 
 			return $this;
@@ -1334,10 +1341,7 @@ class CI_Loader {
 		// Autoload drivers
 		if (isset($autoload['drivers']))
 		{
-			foreach ($autoload['drivers'] as $item)
-			{
-				$this->driver($item);
-			}
+			$this->driver($autoload['drivers']);
 		}
 
 		// Load libraries
