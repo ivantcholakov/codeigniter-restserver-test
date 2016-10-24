@@ -6,6 +6,8 @@ A temporary repository for testing https://github.com/chriskacerguis/codeigniter
 
 Version: 2.7.2.63
 
+Requires PHP >= 5.3.7
+
 Live demo: http://iridadesign.com/codeigniter-restserver-test
 
 License for the original code: The MIT License http://opensource.org/licenses/MIT
