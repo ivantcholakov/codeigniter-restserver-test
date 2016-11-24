@@ -3,6 +3,9 @@
         "guzzlehttp/guzzle": "~6.0",
         "erusev/parsedown": "^1.6",
         "erusev/parsedown-extra": "^0.7.1",
-        "rmccue/requests": ">=1.0"
+        "rmccue/requests": ">=1.0",
+        "php-http/guzzle6-adapter": "^1.1",
+        "php-http/discovery": "^1.1",
+        "php-http/client-common": "^1.4"
    }
 }
