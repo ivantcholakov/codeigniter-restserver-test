@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Accessing the REST Server Using the Guzzle HTTP Client</title>
+    <title>Accessing the REST Server Using the PHP-HTTP Client</title>
 
     <style>
 
@@ -68,7 +68,7 @@
 <body>
 
 <div id="container">
-    <h1>Accessing the REST Server Using the Guzzle HTTP Client</h1>
+    <h1>Accessing the REST Server Using the PHP-HTTP Client</h1>
 
     <div id="body">
 
