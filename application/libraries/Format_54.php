@@ -403,21 +403,30 @@ class Format {
 
         if (empty($callback) === TRUE)
         {
-            return json_encode($data);
+            // Modified by Ivan Tcholakov, 15-MAR-2017.
+            //return json_encode($data);
+            return json_encode($data, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
+            //
         }
 
         // We only honour a jsonp callback which are valid javascript identifiers
         elseif (preg_match('/^[a-z_\$][a-z0-9\$_]*(\.[a-z_\$][a-z0-9\$_]*)*$/i', $callback))
         {
             // Return the data as encoded json with a callback
-            return $callback.'('.json_encode($data).');';
+            // Modified by Ivan Tcholakov, 15-MAR-2017.
+            //return $callback.'('.json_encode($data).');';
+            return $callback.'('.json_encode($data, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT).');';
+            //
         }
 
         // An invalid jsonp callback function provided.
         // Though I don't believe this should be hardcoded here
         $data['warning'] = 'INVALID JSONP CALLBACK: '.$callback;
 
-        return json_encode($data);
+        // Modified by Ivan Tcholakov, 15-MAR-2017.
+        //return json_encode($data);
+        return json_encode($data, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
+        //
     }
 
     /**
