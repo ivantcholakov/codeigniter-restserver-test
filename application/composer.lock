@@ -321,16 +321,16 @@
         },
         {
             "name": "php-http/client-common",
-            "version": "v1.4.1",
+            "version": "v1.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-http/client-common.git",
-                "reference": "6027a1d59064c11c614a9aa2b5e3b800add4d878"
+                "reference": "85b2501ad96a8746918527f34c0d7977424b2bb3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-http/client-common/zipball/6027a1d59064c11c614a9aa2b5e3b800add4d878",
-                "reference": "6027a1d59064c11c614a9aa2b5e3b800add4d878",
+                "url": "https://api.github.com/repos/php-http/client-common/zipball/85b2501ad96a8746918527f34c0d7977424b2bb3",
+                "reference": "85b2501ad96a8746918527f34c0d7977424b2bb3",
                 "shasum": ""
             },
             "require": {
@@ -378,7 +378,7 @@
                 "http",
                 "httplug"
             ],
-            "time": "2017-02-20T14:20:20+00:00"
+            "time": "2017-03-18T11:14:35+00:00"
         },
         {
             "name": "php-http/curl-client",
