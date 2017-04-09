@@ -6,6 +6,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 /** @noinspection PhpIncludeInspection */
 require APPPATH . '/libraries/REST_Controller.php';
 
+// use namespace
+use Restserver\Libraries\REST_Controller;
+
 /**
  * This is an example of a few basic user interaction methods you could use
  * all done with a hardcoded array
