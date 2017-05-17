@@ -75,11 +75,7 @@
         <h2><a href="<?php echo site_url(); ?>">Home</a></h2>
 
         <p>
-            Articles:
-            <br />
-            <a href="http://net.tutsplus.com/tutorials/php/working-with-restful-services-in-codeigniter-2/" target="_blank">http://net.tutsplus.com/tutorials/php/working-with-restful-services-in-codeigniter-2/</a>
-            <br />
-            <a href="http://outergalactic.org/blog/restful-services-with-codeigniter/" target="_blank">http://outergalactic.org/blog/restful-services-with-codeigniter/</a>
+            The article: <a href="http://net.tutsplus.com/tutorials/php/working-with-restful-services-in-codeigniter-2/" target="_blank">http://net.tutsplus.com/tutorials/php/working-with-restful-services-in-codeigniter-2/</a>
         </p>
 
         <p>
