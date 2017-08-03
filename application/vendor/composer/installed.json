@@ -535,70 +535,6 @@
         ]
     },
     {
-        "name": "php-http/discovery",
-        "version": "1.2.1",
-        "version_normalized": "1.2.1.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/php-http/discovery.git",
-            "reference": "6b33475a3239439bc7ced287d0de0bb82e04d2f0"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/php-http/discovery/zipball/6b33475a3239439bc7ced287d0de0bb82e04d2f0",
-            "reference": "6b33475a3239439bc7ced287d0de0bb82e04d2f0",
-            "shasum": ""
-        },
-        "require": {
-            "php": "^5.5 || ^7.0"
-        },
-        "require-dev": {
-            "henrikbjorn/phpspec-code-coverage": "^2.0.2",
-            "php-http/httplug": "^1.0",
-            "php-http/message-factory": "^1.0",
-            "phpspec/phpspec": "^2.4",
-            "puli/composer-plugin": "1.0.0-beta10"
-        },
-        "suggest": {
-            "php-http/message": "Allow to use Guzzle, Diactoros or Slim Framework factories",
-            "puli/composer-plugin": "Sets up Puli which is recommended for Discovery to work. Check http://docs.php-http.org/en/latest/discovery.html for more details."
-        },
-        "time": "2017-03-02T06:56:00+00:00",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "1.3-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Http\\Discovery\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Márk Sági-Kazár",
-                "email": "mark.sagikazar@gmail.com"
-            }
-        ],
-        "description": "Finds installed HTTPlug implementations and PSR-7 message factories",
-        "homepage": "http://php-http.org",
-        "keywords": [
-            "adapter",
-            "client",
-            "discovery",
-            "factory",
-            "http",
-            "message",
-            "psr7"
-        ]
-    },
-    {
         "name": "guzzlehttp/psr7",
         "version": "1.4.2",
         "version_normalized": "1.4.2.0",
@@ -846,143 +782,6 @@
         ]
     },
     {
-        "name": "roave/security-advisories",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/Roave/SecurityAdvisories.git",
-            "reference": "0b18b6bbeed070fb900ad78e81ffa1182a57a752"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/0b18b6bbeed070fb900ad78e81ffa1182a57a752",
-            "reference": "0b18b6bbeed070fb900ad78e81ffa1182a57a752",
-            "shasum": ""
-        },
-        "conflict": {
-            "adodb/adodb-php": "<5.20.6",
-            "amphp/artax": ">=2,<2.0.6|<1.0.6",
-            "aws/aws-sdk-php": ">=3,<3.2.1",
-            "bugsnag/bugsnag-laravel": ">=2,<2.0.2",
-            "cakephp/cakephp": ">=3,<3.0.15|>=2,<2.4.99|>=2.5,<2.5.99|>=2.6,<2.6.12|>=1.3,<1.3.18|>=2.7,<2.7.6|>=3.1,<3.1.4",
-            "cart2quote/module-quotation": ">=4.1.6,<=4.4.5|>=5,<5.4.4",
-            "cartalyst/sentry": "<2.1",
-            "codeigniter/framework": "<=3.0.6",
-            "composer/composer": "<=1.0.0-alpha11",
-            "contao-components/mediaelement": ">=2.14.2,<2.21.1",
-            "contao/core": ">=2.11,<3.5.15",
-            "doctrine/annotations": ">=1,<1.2.7",
-            "doctrine/cache": ">=1,<1.3.2|>=1.4,<1.4.2",
-            "doctrine/common": ">=2,<2.4.3|>=2.5,<2.5.1",
-            "doctrine/dbal": ">=2,<2.0.8|>=2.1,<2.1.2",
-            "doctrine/doctrine-bundle": "<1.5.2",
-            "doctrine/doctrine-module": "<=0.7.1",
-            "doctrine/mongodb-odm": ">=1,<1.0.2",
-            "doctrine/mongodb-odm-bundle": ">=2,<3.0.1",
-            "doctrine/orm": ">=2,<2.4.8|>=2.5,<2.5.1",
-            "dompdf/dompdf": ">=0.6,<0.6.2",
-            "drupal/core": ">=8,<8.3.4",
-            "drupal/drupal": ">=8,<8.3.4",
-            "firebase/php-jwt": "<2",
-            "friendsofsymfony/rest-bundle": ">=1.2,<1.2.2",
-            "friendsofsymfony/user-bundle": ">=1.2,<1.3.5",
-            "gregwar/rst": "<1.0.3",
-            "guzzlehttp/guzzle": ">=6,<6.2.1|>=4.0.0-rc2,<4.2.4|>=5,<5.3.1",
-            "illuminate/auth": ">=4,<4.0.99|>=4.1,<4.1.26",
-            "illuminate/database": ">=4,<4.0.99|>=4.1,<4.1.29",
-            "joomla/session": "<1.3.1",
-            "laravel/framework": ">=4,<4.0.99|>=4.1,<4.1.29",
-            "laravel/socialite": ">=1,<1.0.99|>=2,<2.0.10",
-            "magento/magento1ce": ">=1.5.0.1,<1.9.3.2",
-            "magento/magento1ee": ">=1.9,<1.14.3.2",
-            "magento/magento2ce": ">=2,<2.2",
-            "monolog/monolog": ">=1.8,<1.12",
-            "namshi/jose": "<2.2",
-            "onelogin/php-saml": "<2.10.4",
-            "oro/crm": ">=1.7,<1.7.4",
-            "oro/platform": ">=1.7,<1.7.4",
-            "phpmailer/phpmailer": ">=5,<5.2.22",
-            "pusher/pusher-php-server": "<2.2.1",
-            "sabre/dav": ">=1.6,<1.6.99|>=1.7,<1.7.11|>=1.8,<1.8.9",
-            "shopware/shopware": "<4.4|>=5,<5.2.16",
-            "silverstripe/cms": ">=3.1,<3.1.11|>=3,<=3.0.11",
-            "silverstripe/forum": "<=0.6.1|>=0.7,<=0.7.3",
-            "silverstripe/framework": ">=3,<3.3",
-            "silverstripe/userforms": "<3",
-            "simplesamlphp/saml2": "<1.8.1|>=1.9,<1.9.1|>=1.10,<1.10.3|>=2,<2.3.3",
-            "simplesamlphp/simplesamlphp": "<1.14.12",
-            "simplesamlphp/simplesamlphp-module-infocard": "<1.0.1",
-            "socalnick/scn-social-auth": "<1.15.2",
-            "squizlabs/php_codesniffer": ">=1,<2.8.1",
-            "swiftmailer/swiftmailer": ">=4,<5.4.5",
-            "symfony/dependency-injection": ">=2,<2.0.17",
-            "symfony/form": ">=2.3,<2.3.35|>=2.4,<2.6.12|>=2.7,<2.7.7",
-            "symfony/framework-bundle": ">=2,<2.3.18|>=2.4,<2.4.8|>=2.5,<2.5.2",
-            "symfony/http-foundation": ">=2,<2.3.27|>=2.4,<2.5.11|>=2.6,<2.6.6",
-            "symfony/http-kernel": ">=2,<2.3.29|>=2.4,<2.5.12|>=2.6,<2.6.8",
-            "symfony/routing": ">=2,<2.0.19",
-            "symfony/security": ">=2.3,<2.3.37|>=2.4,<2.6.13|>=2.7,<2.7.9|>=2,<2.0.25|>=2.1,<2.1.13|>=2.2,<2.2.9",
-            "symfony/security-core": ">=2.8,<2.8.6|>=3,<3.0.6|>=2.4,<2.6.13|>=2.7,<2.7.9",
-            "symfony/security-http": ">=2.4,<2.7.13|>=2.3,<2.3.41|>=2.8,<2.8.6|>=3,<3.0.6",
-            "symfony/serializer": ">=2,<2.0.11",
-            "symfony/symfony": ">=2,<2.3.41|>=2.4,<2.7.13|>=2.8,<2.8.6|>=3,<3.0.6",
-            "symfony/translation": ">=2,<2.0.17",
-            "symfony/validator": ">=2,<2.0.24|>=2.1,<2.1.12|>=2.2,<2.2.5|>=2.3,<2.3.3",
-            "symfony/web-profiler-bundle": ">=2,<2.3.19|>=2.4,<2.4.9|>=2.5,<2.5.4",
-            "symfony/yaml": ">=2,<2.0.22|>=2.1,<2.1.7",
-            "thelia/backoffice-default-template": ">=2.1,<2.1.2",
-            "thelia/thelia": ">=2.1.0-beta1,<2.1.3|>=2.1,<2.1.2",
-            "twig/twig": "<1.20",
-            "typo3/cms": ">=6.2,<6.2.30|>=8,<8.6.1|>=7,<7.6.16",
-            "typo3/flow": ">=2.3,<2.3.16|>=3,<3.0.10|>=3.1,<3.1.7|>=3.2,<3.2.7|>=3.3,<3.3.5|>=1,<1.0.4|>=1.1,<1.1.1|>=2,<2.0.1",
-            "typo3/neos": ">=1.1,<1.1.3|>=1.2,<1.2.13|>=2,<2.0.4",
-            "willdurand/js-translation-bundle": "<2.1.1",
-            "yiisoft/yii": ">=1.1.14,<1.1.15",
-            "yiisoft/yii2": "<2.0.5",
-            "yiisoft/yii2-bootstrap": "<2.0.4",
-            "yiisoft/yii2-dev": "<2.0.4",
-            "yiisoft/yii2-gii": "<2.0.4",
-            "yiisoft/yii2-jui": "<2.0.4",
-            "zendframework/zend-cache": ">=2.4,<2.4.8|>=2.5,<2.5.3",
-            "zendframework/zend-captcha": ">=2,<2.4.9|>=2.5,<2.5.2",
-            "zendframework/zend-crypt": ">=2,<2.4.9|>=2.5,<2.5.2",
-            "zendframework/zend-db": ">=2,<2.0.99|>=2.1,<2.1.99|>=2.2,<2.2.10|>=2.3,<2.3.5",
-            "zendframework/zend-diactoros": ">=1,<1.0.4",
-            "zendframework/zend-form": ">=2,<2.2.7|>=2.3,<2.3.1",
-            "zendframework/zend-http": ">=2,<2.0.99|>=2.1,<2.1.99|>=2.3,<2.3.8|>=2.4,<2.4.1",
-            "zendframework/zend-json": ">=2.1,<2.1.6|>=2.2,<2.2.6",
-            "zendframework/zend-ldap": ">=2,<2.0.99|>=2.1,<2.1.99|>=2.2,<2.2.8|>=2.3,<2.3.3",
-            "zendframework/zend-mail": ">=2,<2.4.11|>=2.5,<2.7.2",
-            "zendframework/zend-navigation": ">=2,<2.2.7|>=2.3,<2.3.1",
-            "zendframework/zend-session": ">=2,<2.0.99|>=2.1,<2.1.99|>=2.2,<2.2.9|>=2.3,<2.3.4",
-            "zendframework/zend-validator": ">=2.3,<2.3.6",
-            "zendframework/zend-view": ">=2,<2.2.7|>=2.3,<2.3.1",
-            "zendframework/zend-xmlrpc": ">=2.1,<2.1.6|>=2.2,<2.2.6",
-            "zendframework/zendframework": ">=2,<2.4.11|>=2.5,<2.5.1",
-            "zendframework/zendframework1": "<1.12.20",
-            "zendframework/zendopenid": ">=2,<2.0.2",
-            "zendframework/zendxml": ">=1,<1.0.1",
-            "zf-commons/zfc-user": "<1.2.2",
-            "zfcampus/zf-apigility-doctrine": ">=1,<1.0.3",
-            "zfr/zfr-oauth2-server-module": "<0.1.2"
-        },
-        "time": "2017-06-22T16:43:17+00:00",
-        "type": "metapackage",
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Marco Pivetta",
-                "email": "ocramius@gmail.com",
-                "role": "maintainer"
-            }
-        ],
-        "description": "Prevents installation of composer packages with known security vulnerabilities: no API, simply require it"
-    },
-    {
         "name": "erusev/parsedown",
         "version": "1.6.3",
         "version_normalized": "1.6.3.0",
@@ -1101,9 +900,73 @@
         ]
     },
     {
+        "name": "php-http/discovery",
+        "version": "1.3.0",
+        "version_normalized": "1.3.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/php-http/discovery.git",
+            "reference": "7b50ab4d6c9fdaa1ed53ae310c955900af6e3372"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/php-http/discovery/zipball/7b50ab4d6c9fdaa1ed53ae310c955900af6e3372",
+            "reference": "7b50ab4d6c9fdaa1ed53ae310c955900af6e3372",
+            "shasum": ""
+        },
+        "require": {
+            "php": "^5.5 || ^7.0"
+        },
+        "require-dev": {
+            "henrikbjorn/phpspec-code-coverage": "^2.0.2",
+            "php-http/httplug": "^1.0",
+            "php-http/message-factory": "^1.0",
+            "phpspec/phpspec": "^2.4",
+            "puli/composer-plugin": "1.0.0-beta10"
+        },
+        "suggest": {
+            "php-http/message": "Allow to use Guzzle, Diactoros or Slim Framework factories",
+            "puli/composer-plugin": "Sets up Puli which is recommended for Discovery to work. Check http://docs.php-http.org/en/latest/discovery.html for more details."
+        },
+        "time": "2017-08-03T10:12:53+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.3-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Http\\Discovery\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Márk Sági-Kazár",
+                "email": "mark.sagikazar@gmail.com"
+            }
+        ],
+        "description": "Finds installed HTTPlug implementations and PSR-7 message factories",
+        "homepage": "http://php-http.org",
+        "keywords": [
+            "adapter",
+            "client",
+            "discovery",
+            "factory",
+            "http",
+            "message",
+            "psr7"
+        ]
+    },
+    {
         "name": "symfony/options-resolver",
-        "version": "v3.3.4",
-        "version_normalized": "3.3.4.0",
+        "version": "v3.3.6",
+        "version_normalized": "3.3.6.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/options-resolver.git",
@@ -1155,5 +1018,143 @@
             "configuration",
             "options"
         ]
+    },
+    {
+        "name": "roave/security-advisories",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Roave/SecurityAdvisories.git",
+            "reference": "626c97bd5b45a08db902a0fb0b13f58f3785b439"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/626c97bd5b45a08db902a0fb0b13f58f3785b439",
+            "reference": "626c97bd5b45a08db902a0fb0b13f58f3785b439",
+            "shasum": ""
+        },
+        "conflict": {
+            "adodb/adodb-php": "<5.20.6",
+            "amphp/artax": ">=2,<2.0.6|<1.0.6",
+            "aws/aws-sdk-php": ">=3,<3.2.1",
+            "bugsnag/bugsnag-laravel": ">=2,<2.0.2",
+            "cakephp/cakephp": ">=3,<3.0.15|>=2,<2.4.99|>=2.5,<2.5.99|>=2.6,<2.6.12|>=1.3,<1.3.18|>=2.7,<2.7.6|>=3.1,<3.1.4",
+            "cart2quote/module-quotation": ">=4.1.6,<=4.4.5|>=5,<5.4.4",
+            "cartalyst/sentry": "<2.1",
+            "codeigniter/framework": "<=3.0.6",
+            "composer/composer": "<=1.0.0-alpha11",
+            "contao-components/mediaelement": ">=2.14.2,<2.21.1",
+            "contao/core": ">=2,<3.5.28",
+            "contao/core-bundle": ">=4,<4.4.1",
+            "doctrine/annotations": ">=1,<1.2.7",
+            "doctrine/cache": ">=1,<1.3.2|>=1.4,<1.4.2",
+            "doctrine/common": ">=2,<2.4.3|>=2.5,<2.5.1",
+            "doctrine/dbal": ">=2,<2.0.8|>=2.1,<2.1.2",
+            "doctrine/doctrine-bundle": "<1.5.2",
+            "doctrine/doctrine-module": "<=0.7.1",
+            "doctrine/mongodb-odm": ">=1,<1.0.2",
+            "doctrine/mongodb-odm-bundle": ">=2,<3.0.1",
+            "doctrine/orm": ">=2,<2.4.8|>=2.5,<2.5.1",
+            "dompdf/dompdf": ">=0.6,<0.6.2",
+            "drupal/core": ">=8,<8.3.4",
+            "drupal/drupal": ">=8,<8.3.4",
+            "firebase/php-jwt": "<2",
+            "friendsofsymfony/rest-bundle": ">=1.2,<1.2.2",
+            "friendsofsymfony/user-bundle": ">=1.2,<1.3.5",
+            "gregwar/rst": "<1.0.3",
+            "guzzlehttp/guzzle": ">=6,<6.2.1|>=4.0.0-rc2,<4.2.4|>=5,<5.3.1",
+            "illuminate/auth": ">=4,<4.0.99|>=4.1,<4.1.26",
+            "illuminate/database": ">=4,<4.0.99|>=4.1,<4.1.29",
+            "joomla/session": "<1.3.1",
+            "laravel/framework": ">=4,<4.0.99|>=4.1,<4.1.29",
+            "laravel/socialite": ">=1,<1.0.99|>=2,<2.0.10",
+            "magento/magento1ce": ">=1.5.0.1,<1.9.3.2",
+            "magento/magento1ee": ">=1.9,<1.14.3.2",
+            "magento/magento2ce": ">=2,<2.2",
+            "monolog/monolog": ">=1.8,<1.12",
+            "namshi/jose": "<2.2",
+            "onelogin/php-saml": "<2.10.4",
+            "oro/crm": ">=1.7,<1.7.4",
+            "oro/platform": ">=1.7,<1.7.4",
+            "phpmailer/phpmailer": ">=5,<5.2.24",
+            "pusher/pusher-php-server": "<2.2.1",
+            "sabre/dav": ">=1.6,<1.6.99|>=1.7,<1.7.11|>=1.8,<1.8.9",
+            "shopware/shopware": "<4.4|>=5,<5.2.16",
+            "silverstripe/cms": ">=3.1,<3.1.11|>=3,<=3.0.11",
+            "silverstripe/forum": "<=0.6.1|>=0.7,<=0.7.3",
+            "silverstripe/framework": ">=3,<3.3",
+            "silverstripe/userforms": "<3",
+            "simplesamlphp/saml2": "<1.8.1|>=1.9,<1.9.1|>=1.10,<1.10.3|>=2,<2.3.3",
+            "simplesamlphp/simplesamlphp": "<1.14.12",
+            "simplesamlphp/simplesamlphp-module-infocard": "<1.0.1",
+            "socalnick/scn-social-auth": "<1.15.2",
+            "squizlabs/php_codesniffer": ">=1,<2.8.1",
+            "swiftmailer/swiftmailer": ">=4,<5.4.5",
+            "symfony/dependency-injection": ">=2,<2.0.17",
+            "symfony/form": ">=2.3,<2.3.35|>=2.4,<2.6.12|>=2.7,<2.7.7",
+            "symfony/framework-bundle": ">=2,<2.3.18|>=2.4,<2.4.8|>=2.5,<2.5.2",
+            "symfony/http-foundation": ">=2,<2.3.27|>=2.4,<2.5.11|>=2.6,<2.6.6",
+            "symfony/http-kernel": ">=2,<2.3.29|>=2.4,<2.5.12|>=2.6,<2.6.8",
+            "symfony/routing": ">=2,<2.0.19",
+            "symfony/security": ">=2.7.30,<2.7.32|>=2.8.23,<2.8.25|>=3.2.10,<3.2.12|>=3.3.3,<3.3.5|>=2.3,<2.3.37|>=2.4,<2.6.13|>=2.7,<2.7.9|>=2,<2.0.25|>=2.1,<2.1.13|>=2.2,<2.2.9",
+            "symfony/security-core": ">=2.7.30,<2.7.32|>=2.8.23,<2.8.25|>=3.2.10,<3.2.12|>=3.3.3,<3.3.5|>=2.8,<2.8.6|>=3,<3.0.6|>=2.4,<2.6.13|>=2.7,<2.7.9",
+            "symfony/security-http": ">=2.4,<2.7.13|>=2.3,<2.3.41|>=2.8,<2.8.6|>=3,<3.0.6",
+            "symfony/serializer": ">=2,<2.0.11",
+            "symfony/symfony": ">=2,<2.3.41|>=2.4,<2.7.13|>=2.7.30,<2.7.32|>=2.8.23,<2.8.25|>=3.2.10,<3.2.12|>=3.3.3,<3.3.5|>=2.8,<2.8.6|>=3,<3.0.6",
+            "symfony/translation": ">=2,<2.0.17",
+            "symfony/validator": ">=2,<2.0.24|>=2.1,<2.1.12|>=2.2,<2.2.5|>=2.3,<2.3.3",
+            "symfony/web-profiler-bundle": ">=2,<2.3.19|>=2.4,<2.4.9|>=2.5,<2.5.4",
+            "symfony/yaml": ">=2,<2.0.22|>=2.1,<2.1.7",
+            "thelia/backoffice-default-template": ">=2.1,<2.1.2",
+            "thelia/thelia": ">=2.1.0-beta1,<2.1.3|>=2.1,<2.1.2",
+            "twig/twig": "<1.20",
+            "typo3/cms": ">=6.2,<6.2.30|>=8,<8.6.1|>=7,<7.6.16",
+            "typo3/flow": ">=2.3,<2.3.16|>=3,<3.0.10|>=3.1,<3.1.7|>=3.2,<3.2.7|>=3.3,<3.3.5|>=1,<1.0.4|>=1.1,<1.1.1|>=2,<2.0.1",
+            "typo3/neos": ">=1.1,<1.1.3|>=1.2,<1.2.13|>=2,<2.0.4",
+            "willdurand/js-translation-bundle": "<2.1.1",
+            "yiisoft/yii": ">=1.1.14,<1.1.15",
+            "yiisoft/yii2": "<2.0.5",
+            "yiisoft/yii2-bootstrap": "<2.0.4",
+            "yiisoft/yii2-dev": "<2.0.4",
+            "yiisoft/yii2-gii": "<2.0.4",
+            "yiisoft/yii2-jui": "<2.0.4",
+            "zendframework/zend-cache": ">=2.4,<2.4.8|>=2.5,<2.5.3",
+            "zendframework/zend-captcha": ">=2,<2.4.9|>=2.5,<2.5.2",
+            "zendframework/zend-crypt": ">=2,<2.4.9|>=2.5,<2.5.2",
+            "zendframework/zend-db": ">=2,<2.0.99|>=2.1,<2.1.99|>=2.2,<2.2.10|>=2.3,<2.3.5",
+            "zendframework/zend-diactoros": ">=1,<1.0.4",
+            "zendframework/zend-form": ">=2,<2.2.7|>=2.3,<2.3.1",
+            "zendframework/zend-http": ">=2,<2.0.99|>=2.1,<2.1.99|>=2.3,<2.3.8|>=2.4,<2.4.1",
+            "zendframework/zend-json": ">=2.1,<2.1.6|>=2.2,<2.2.6",
+            "zendframework/zend-ldap": ">=2,<2.0.99|>=2.1,<2.1.99|>=2.2,<2.2.8|>=2.3,<2.3.3",
+            "zendframework/zend-mail": ">=2,<2.4.11|>=2.5,<2.7.2",
+            "zendframework/zend-navigation": ">=2,<2.2.7|>=2.3,<2.3.1",
+            "zendframework/zend-session": ">=2,<2.0.99|>=2.1,<2.1.99|>=2.2,<2.2.9|>=2.3,<2.3.4",
+            "zendframework/zend-validator": ">=2.3,<2.3.6",
+            "zendframework/zend-view": ">=2,<2.2.7|>=2.3,<2.3.1",
+            "zendframework/zend-xmlrpc": ">=2.1,<2.1.6|>=2.2,<2.2.6",
+            "zendframework/zendframework": ">=2,<2.4.11|>=2.5,<2.5.1",
+            "zendframework/zendframework1": "<1.12.20",
+            "zendframework/zendopenid": ">=2,<2.0.2",
+            "zendframework/zendxml": ">=1,<1.0.1",
+            "zf-commons/zfc-user": "<1.2.2",
+            "zfcampus/zf-apigility-doctrine": ">=1,<1.0.3",
+            "zfr/zfr-oauth2-server-module": "<0.1.2"
+        },
+        "time": "2017-07-28T07:54:11+00:00",
+        "type": "metapackage",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Marco Pivetta",
+                "email": "ocramius@gmail.com",
+                "role": "maintainer"
+            }
+        ],
+        "description": "Prevents installation of composer packages with known security vulnerabilities: no API, simply require it"
     }
 ]
