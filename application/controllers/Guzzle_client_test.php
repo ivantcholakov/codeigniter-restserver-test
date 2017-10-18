@@ -20,7 +20,13 @@ class Guzzle_client_test extends CI_Controller {
         \$this->load->helper('url');
 
         \$client = new GuzzleHttp\Client();
-        \$res = \$client->get(site_url('api/example/users/id/'.\$user_id.'/format/json'), ['auth' =>  ['admin', '1234']]);
+        \$res = \$client->get(
+            site_url('api/example/users/id/'.\$user_id.'/format/json'),
+            [
+                'auth' =>  ['admin', '1234'],
+                'verify' => false,  // Disable SSL verification, this option value is insecure and should be avoided!
+            ]
+        );
 
         \$result = (string) \$res->getBody();
         \$status_code = \$res->getStatusCode();
