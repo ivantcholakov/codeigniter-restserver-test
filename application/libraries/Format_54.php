@@ -1,6 +1,4 @@
 <?php
-// Note, this cannot be namespaced for the time being due to how CI works
-//namespace Restserver\Libraries;
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -226,12 +224,7 @@ class Format {
             // if there is another array found recursively call this function
             elseif (is_array($value) || is_object($value))
             {
-                if (isset($value['_value'])) {
-                    $node = $structure->addChild($key, $value['_value']);
-                    unset($value['_value']);
-                } else {
-                    $node = $structure->addChild($key);
-                }
+                $node = $structure->addChild($key);
 
                 // recursive call.
                 $this->to_xml($value, $node, $key);
@@ -386,6 +379,12 @@ class Format {
         // Close the handle
         fclose($handle);
 
+        // Convert UTF-8 encoding to UTF-16LE which is supported by MS Excel
+        // Removed for now by Ivan Tcholakov, 19-OCT-2017.
+        // See https://github.com/chriskacerguis/codeigniter-restserver/pull/818
+        //$csv = mb_convert_encoding($csv, 'UTF-16LE', 'UTF-8');
+        //
+
         return $csv;
     }
 
@@ -411,7 +410,7 @@ class Format {
         if (empty($callback) === TRUE)
         {
             // Modified by Ivan Tcholakov, 15-MAR-2017.
-            //return json_encode($data);
+            //return json_encode($data, JSON_UNESCAPED_UNICODE);
             return json_encode($data, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
             //
         }
@@ -421,7 +420,7 @@ class Format {
         {
             // Return the data as encoded json with a callback
             // Modified by Ivan Tcholakov, 15-MAR-2017.
-            //return $callback.'('.json_encode($data).');';
+            //return $callback.'('.json_encode($data, JSON_UNESCAPED_UNICODE).');';
             return $callback.'('.json_encode($data, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT).');';
             //
         }
@@ -431,7 +430,7 @@ class Format {
         $data['warning'] = 'INVALID JSONP CALLBACK: '.$callback;
 
         // Modified by Ivan Tcholakov, 15-MAR-2017.
-        //return json_encode($data);
+        //return json_encode($data, JSON_UNESCAPED_UNICODE);
         return json_encode($data, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
         //
     }
