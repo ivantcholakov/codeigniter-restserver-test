@@ -75,12 +75,12 @@
         <h2><a href="<?php echo site_url(); ?>">Home</a></h2>
 
         <p>
-            The article: <a href="http://net.tutsplus.com/tutorials/php/working-with-restful-services-in-codeigniter-2/" target="_blank">http://net.tutsplus.com/tutorials/php/working-with-restful-services-in-codeigniter-2/</a>
+            The article: <a href="http://net.tutsplus.com/tutorials/php/working-with-restful-services-in-codeigniter-2/" target="_blank" rel="noopener">http://net.tutsplus.com/tutorials/php/working-with-restful-services-in-codeigniter-2/</a>
         </p>
 
         <p>
             The master project repository is:
-            <a href="https://github.com/chriskacerguis/codeigniter-restserver" target="_blank">https://github.com/chriskacerguis/codeigniter-restserver</a>
+            <a href="https://github.com/chriskacerguis/codeigniter-restserver" target="_blank" rel="noopener">https://github.com/chriskacerguis/codeigniter-restserver</a>
         </p>
 
         <h3>

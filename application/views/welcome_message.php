@@ -80,7 +80,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <h2><a href="<?php echo site_url('rest-server'); ?>">REST Server Tests</a></h2>
 
         <?php if (file_exists(FCPATH.'documentation/index.html')) : ?>
-        <h2><a href="<?php echo base_url('documentation/index.html'); ?>" target="_blank">REST Server Documentation</a></h2>
+        <h2><a href="<?php echo base_url('documentation/index.html'); ?>" target="_blank" rel="noopener">REST Server Documentation</a></h2>
         <?php endif ?>
 
         <p>The page you are looking at is being generated dynamically by CodeIgniter.</p>
@@ -92,7 +92,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <code>application/controllers/Welcome.php</code>
 
         <?php if (file_exists(FCPATH.'user_guide/index.html')) : ?>
-        <p>If you are exploring CodeIgniter for the very first time, you should start by reading the <a href="<?php echo base_url('user_guide/index.html'); ?>" target="_blank">User Guide</a>.</p>
+        <p>If you are exploring CodeIgniter for the very first time, you should start by reading the <a href="<?php echo base_url('user_guide/index.html'); ?>" target="_blank" rel="noopener">User Guide</a>.</p>
         <?php endif ?>
 
         <?php if ($readme != '') : ?>
