@@ -1,6 +1,7 @@
 {
     "config": {
-        "preferred-install": "dist"
+        "preferred-install": "dist",
+        "optimize-autoloader": true
     },
    "require": {
         "roave/security-advisories": "dev-master",
