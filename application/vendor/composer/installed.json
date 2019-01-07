@@ -54,6 +54,41 @@
         ]
     },
     {
+        "name": "codeigniter/framework",
+        "version": "dev-3.1-stable",
+        "version_normalized": "dev-3.1-stable",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/bcit-ci/CodeIgniter.git",
+            "reference": "c21c0359e1b4d96b1186ca2db78a01c7f38e904d"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/bcit-ci/CodeIgniter/zipball/c21c0359e1b4d96b1186ca2db78a01c7f38e904d",
+            "reference": "c21c0359e1b4d96b1186ca2db78a01c7f38e904d",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.7"
+        },
+        "require-dev": {
+            "mikey179/vfsstream": "1.1.*",
+            "phpunit/phpunit": "4.* || 5.*"
+        },
+        "suggest": {
+            "paragonie/random_compat": "Provides better randomness in PHP 5.x"
+        },
+        "time": "2019-01-04T12:56:01+00:00",
+        "type": "project",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "The CodeIgniter framework",
+        "homepage": "https://codeigniter.com"
+    },
+    {
         "name": "erusev/parsedown",
         "version": "1.7.1",
         "version_normalized": "1.7.1.0",
@@ -338,17 +373,17 @@
     },
     {
         "name": "paragonie/random_compat",
-        "version": "v2.0.17",
-        "version_normalized": "2.0.17.0",
+        "version": "v2.0.18",
+        "version_normalized": "2.0.18.0",
         "source": {
             "type": "git",
             "url": "https://github.com/paragonie/random_compat.git",
-            "reference": "29af24f25bab834fcbb38ad2a69fa93b867e070d"
+            "reference": "0a58ef6e3146256cc3dc7cc393927bcc7d1b72db"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/paragonie/random_compat/zipball/29af24f25bab834fcbb38ad2a69fa93b867e070d",
-            "reference": "29af24f25bab834fcbb38ad2a69fa93b867e070d",
+            "url": "https://api.github.com/repos/paragonie/random_compat/zipball/0a58ef6e3146256cc3dc7cc393927bcc7d1b72db",
+            "reference": "0a58ef6e3146256cc3dc7cc393927bcc7d1b72db",
             "shasum": ""
         },
         "require": {
@@ -360,7 +395,7 @@
         "suggest": {
             "ext-libsodium": "Provides a modern crypto API that can be used to generate random bytes."
         },
-        "time": "2018-07-04T16:31:37+00:00",
+        "time": "2019-01-03T20:59:08+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -389,17 +424,17 @@
     },
     {
         "name": "php-http/client-common",
-        "version": "1.8.2",
-        "version_normalized": "1.8.2.0",
+        "version": "1.9.0",
+        "version_normalized": "1.9.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/php-http/client-common.git",
-            "reference": "efe327f4305813aa9025662259b78323d25b9948"
+            "reference": "9c21b6058caafdf2fcc99a0cabdf31b3ecb33961"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/php-http/client-common/zipball/efe327f4305813aa9025662259b78323d25b9948",
-            "reference": "efe327f4305813aa9025662259b78323d25b9948",
+            "url": "https://api.github.com/repos/php-http/client-common/zipball/9c21b6058caafdf2fcc99a0cabdf31b3ecb33961",
+            "reference": "9c21b6058caafdf2fcc99a0cabdf31b3ecb33961",
             "shasum": ""
         },
         "require": {
@@ -418,11 +453,11 @@
             "php-http/logger-plugin": "PSR-3 Logger plugin",
             "php-http/stopwatch-plugin": "Symfony Stopwatch plugin"
         },
-        "time": "2018-12-14T22:12:45+00:00",
+        "time": "2019-01-03T10:59:55+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "1.8-dev"
+                "dev-master": "1.9.x-dev"
             }
         },
         "installation-source": "dist",
@@ -510,17 +545,17 @@
     },
     {
         "name": "php-http/discovery",
-        "version": "1.5.0",
-        "version_normalized": "1.5.0.0",
+        "version": "1.5.2",
+        "version_normalized": "1.5.2.0",
         "source": {
             "type": "git",
             "url": "https://github.com/php-http/discovery.git",
-            "reference": "5e7bf246ec54b28ae543b018d2576579a102ac20"
+            "reference": "ffef11d54171336d841a34816a35bc035fb8cef0"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/php-http/discovery/zipball/5e7bf246ec54b28ae543b018d2576579a102ac20",
-            "reference": "5e7bf246ec54b28ae543b018d2576579a102ac20",
+            "url": "https://api.github.com/repos/php-http/discovery/zipball/ffef11d54171336d841a34816a35bc035fb8cef0",
+            "reference": "ffef11d54171336d841a34816a35bc035fb8cef0",
             "shasum": ""
         },
         "require": {
@@ -540,7 +575,7 @@
             "php-http/message": "Allow to use Guzzle, Diactoros or Slim Framework factories",
             "puli/composer-plugin": "Sets up Puli which is recommended for Discovery to work. Check http://docs.php-http.org/en/latest/discovery.html for more details."
         },
-        "time": "2018-12-30T12:07:33+00:00",
+        "time": "2018-12-31T07:31:26+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1022,6 +1057,17 @@
         "name": "roave/security-advisories",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Roave/SecurityAdvisories.git",
+            "reference": "5f3e0c82ada2d16fdd637b24e095888f4abac43f"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/5f3e0c82ada2d16fdd637b24e095888f4abac43f",
+            "reference": "5f3e0c82ada2d16fdd637b24e095888f4abac43f",
+            "shasum": ""
+        },
         "conflict": {
             "3f/pygmentize": "<1.2",
             "adodb/adodb-php": "<5.20.12",
@@ -1213,23 +1259,23 @@
     },
     {
         "name": "symfony/options-resolver",
-        "version": "v4.2.1",
-        "version_normalized": "4.2.1.0",
+        "version": "v4.2.2",
+        "version_normalized": "4.2.2.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/options-resolver.git",
-            "reference": "a9c38e8a3da2c03b3e71fdffa6efb0bda51390ba"
+            "reference": "fbcb106aeee72f3450298bf73324d2cc00d083d1"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/options-resolver/zipball/a9c38e8a3da2c03b3e71fdffa6efb0bda51390ba",
-            "reference": "a9c38e8a3da2c03b3e71fdffa6efb0bda51390ba",
+            "url": "https://api.github.com/repos/symfony/options-resolver/zipball/fbcb106aeee72f3450298bf73324d2cc00d083d1",
+            "reference": "fbcb106aeee72f3450298bf73324d2cc00d083d1",
             "shasum": ""
         },
         "require": {
             "php": "^7.1.3"
         },
-        "time": "2018-11-11T19:52:12+00:00",
+        "time": "2019-01-03T09:07:35+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
