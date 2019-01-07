@@ -3,7 +3,8 @@
         "preferred-install": "dist",
         "optimize-autoloader": true
     },
-   "require": {
+    "require": {
+        "codeigniter/framework": "dev-3.1-stable#c21c0359e1b4d96b1186ca2db78a01c7f38e904d",
         "roave/security-advisories": "dev-master",
         "paragonie/random_compat": "^2.0.2",
         "guzzlehttp/guzzle": "~6.0",
