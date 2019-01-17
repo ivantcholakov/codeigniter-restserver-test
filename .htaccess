@@ -47,7 +47,7 @@
 # Allow access from all domains for web fonts
 
 <IfModule mod_headers.c>
-    <FilesMatch "\.(eot|font.css|otf|ttc|ttf|woff)$">
+    <FilesMatch "\.(eot|font.css|otf|ttc|ttf|woff|woff2)$">
         Header set Access-Control-Allow-Origin "*"
     </FilesMatch>
 </IfModule>
@@ -227,13 +227,27 @@ AddDefaultCharset utf-8
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond $1 !\.php$
-    RewriteCond $1 !^(index\.php|robots\.txt|favicon\.ico)
+    RewriteCond $1 !^(index\.php|robots\.txt|favicon\.ico|apple-touch-icon\.png|apple-touch-icon-precomposed\.png)
     # Modified by Ivan Tcholakov, 23-OCT-2014.
     # Avoiding "No input file specified" error.
     # See http://expressionengine.stackexchange.com/questions/11672/no-input-file-specified-htaccess/13376#13376
     #RewriteRule ^(.*)$ ./index.php/$1 [L,QSA]
     RewriteRule ^(.*)$ ./index.php?/$1 [L,QSA]
     #
+
+    # http://www.controlstyle.com/articles/programming/text/if-mod-since-php/
+    # for php5-cgi
+    <IfModule mod_fcgid.c>
+        RewriteRule .* - [E=HTTP_IF_MODIFIED_SINCE:%{HTTP:If-Modified-Since}]
+        RewriteRule .* - [E=HTTP_IF_NONE_MATCH:%{HTTP:If-None-Match}]
+    </IfModule>
+    <IfModule !mod_fcgid.c>
+        # for Apache FCGI installations
+        <IfModule !mod_php5.c>
+            RewriteRule .* - [E=HTTP_IF_MODIFIED_SINCE:%{HTTP:If-Modified-Since}]
+            RewriteRule .* - [E=HTTP_IF_NONE_MATCH:%{HTTP:If-None-Match}]
+        </IfModule>
+    </IfModule>
 
 </IfModule>
 
@@ -326,6 +340,8 @@ AddDefaultCharset utf-8
 # This includes directories used by version control systems such as Git and SVN.
 
 <IfModule mod_rewrite.c>
+    RewriteCond %{REQUEST_URI} !\.well-known/acme-challenge
+    RewriteCond %{REQUEST_URI} !\.well-known/pki-validation
     RewriteCond %{SCRIPT_FILENAME} -d [OR]
     RewriteCond %{SCRIPT_FILENAME} -f
     RewriteRule "(^|/)\." - [F]
@@ -570,68 +586,3 @@ FileETag None
 # <IfModule mod_headers.c>
 #    Header set Connection Keep-Alive
 # </IfModule>
-
-
-# ##############################################################################
-# # A little more security                                                     #
-# ##############################################################################
-
-# If your server is not already configured as such, the following directive
-# should be uncommented in order to set PHP's register_globals option to OFF.
-# This closes a major security hole that is abused by most XSS (cross-site
-# scripting) attacks. For more information: http://php.net/register_globals
-#
-# IF REGISTER_GLOBALS DIRECTIVE CAUSES 500 INTERNAL SERVER ERRORS :
-#
-# Your server does not allow PHP directives to be set via .htaccess. In that
-# case you must make this change in your php.ini file instead. If you are
-# using a commercial web host, contact the administrators for assistance in
-# doing this. Not all servers allow local php.ini files, and they should
-# include all PHP configurations (not just this one), or you will effectively
-# reset everything to PHP defaults. Consult www.php.net for more detailed
-# information about setting PHP directives.
-
-# php_flag register_globals Off
-
-# Rename session cookie to something else, than PHPSESSID
-# php_value session.name sid
-
-# Do not show you are using PHP
-# Note: Move this line to php.ini since it won't work in .htaccess
-# php_flag expose_php Off
-
-# Level of log detail - log all errors
-# php_value error_reporting -1
-
-# Write errors to log file
-# php_flag log_errors On
-
-# Do not display errors in browser (production - Off, development - On)
-# php_flag display_errors Off
-
-# Do not display startup errors (production - Off, development - On)
-# php_flag display_startup_errors Off
-
-# Format errors in plain text
-# Note: Leave this setting 'On' for xdebug's var_dump() output
-# php_flag html_errors Off
-
-# Show multiple occurrence of error
-# php_flag ignore_repeated_errors Off
-
-# Show same errors from different sources
-# php_flag ignore_repeated_source Off
-
-# Size limit for error messages
-# php_value log_errors_max_len 1024
-
-# Don't precede error with string (doesn't accept empty string, use whitespace if you need)
-# php_value error_prepend_string " "
-
-# Don't prepend to error (doesn't accept empty string, use whitespace if you need)
-# php_value error_append_string " "
-
-# Increase cookie security
-<IfModule php5_module>
-    php_value session.cookie_httponly true
-</IfModule>
