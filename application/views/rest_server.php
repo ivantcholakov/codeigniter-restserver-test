@@ -108,9 +108,7 @@
 
         <h3><a href="<?php echo site_url('curl-test'); ?>">Accessing the REST Server Using the Curl Library</a></h3>
         <h3><a href="<?php echo site_url('rest-client-test'); ?>">Accessing the REST Server Using the Rest Client Library</a></h3>
-        <h3><a href="<?php echo site_url('requests-client-test'); ?>">Accessing the REST Server Using the Requests HTTP Library</a></h3>
         <h3><a href="<?php echo site_url('guzzle-client-test'); ?>">Accessing the REST Server Using the Guzzle HTTP Client</a></h3>
-        <h3><a href="<?php echo site_url('php-http-client-test'); ?>">Accessing the REST Server Using a PHP-HTTP Client</a></h3>
 
         <h3>
             Other
