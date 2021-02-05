@@ -29,7 +29,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '99db3383966abde44e36e5803deafd81a012f971',
+    'reference' => 'd7c0703db6d9819ad2f12817e0aa52a32b0a43e4',
     'name' => '__root__',
   ),
   'versions' => 
@@ -41,7 +41,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '99db3383966abde44e36e5803deafd81a012f971',
+      'reference' => 'd7c0703db6d9819ad2f12817e0aa52a32b0a43e4',
     ),
     'codeigniter/framework' => 
     array (
@@ -51,6 +51,42 @@ private static $installed = array (
       array (
       ),
       'reference' => '0925b5099919300a239909588351a6482c5e792d',
+    ),
+    'components/highlightjs' => 
+    array (
+      'pretty_version' => 'v9.16.2',
+      'version' => '9.16.2.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '1dea393aa70365843cfec34b1f365930d383bdfe',
+    ),
+    'components/jquery' => 
+    array (
+      'pretty_version' => '3.5.1',
+      'version' => '3.5.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'b33e8f0f9a1cb2ae390cf05d766a900b53d2125b',
+    ),
+    'components/modernizr' => 
+    array (
+      'pretty_version' => '3.5.0',
+      'version' => '3.5.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'f4fc5301da393558235c8c927937ed21a5a7c344',
+    ),
+    'components/webfontloader' => 
+    array (
+      'pretty_version' => '1.6.3',
+      'version' => '1.6.3.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '3fdb1367e4e413e26f4587bf03dff0149ad59804',
     ),
     'composer/installers' => 
     array (
