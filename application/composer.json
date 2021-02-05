@@ -3,19 +3,16 @@
         "preferred-install": "dist",
         "optimize-autoloader": true
     },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
-        "codeigniter/framework": "3.1.11",
+        "php": ">=7.2.5",
+        "oomphinc/composer-installers-extender": "^2.0",
+        "codeigniter/framework": "dev-3.1-stable#0925b5099919300a239909588351a6482c5e792d",
         "roave/security-advisories": "dev-master",
-        "paragonie/random_compat": "^2.0.2",
-        "guzzlehttp/guzzle": "~6.0",
-        "erusev/parsedown": "^1.6",
-        "erusev/parsedown-extra": "^0.7.1",
-        "rmccue/requests": ">=1.0",
-        "php-http/guzzle6-adapter": "^1.1",
-        "php-http/discovery": "^1.1",
-        "php-http/client-common": "^1.4",
-        "php-http/curl-client": "^1.6",
-        "guzzlehttp/psr7": "^1.3",
-        "php-http/message": "^1.4"
+        "erusev/parsedown": "^1.7",
+        "erusev/parsedown-extra": "^0.8.1",
+        "ivantcholakov/codeigniter-phpmailer": "^1.4",
+        "guzzlehttp/guzzle": "~7.0"
    }
 }
