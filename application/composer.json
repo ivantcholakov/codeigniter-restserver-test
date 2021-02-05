@@ -21,6 +21,10 @@
         "erusev/parsedown": "^1.7",
         "erusev/parsedown-extra": "^0.8.1",
         "ivantcholakov/codeigniter-phpmailer": "^1.4",
-        "guzzlehttp/guzzle": "~7.0"
+        "guzzlehttp/guzzle": "~7.0",
+        "components/jquery": "3.5.1",
+        "components/modernizr": "^3.5",
+        "components/webfontloader": "^1.6",
+        "components/highlightjs": "^9.16"
    }
 }
