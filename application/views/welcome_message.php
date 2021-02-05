@@ -69,6 +69,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         box-shadow: 0 0 8px #D0D0D0;
     }
     </style>
+
+    <link rel="stylesheet" href="<?php echo base_url('assets/composer-asset/components/highlightjs/styles/github.css'); ?>" />
+    <script src="<?php echo base_url('assets/composer-asset/components/modernizr/modernizr.js'); ?>"></script>
+    <script src="<?php echo base_url('assets/composer-asset/components/jquery/jquery.min.js'); ?>"></script>
+    <script src="<?php echo base_url('assets/composer-asset/components/highlightjs/highlight.pack.min.js'); ?>"></script>
+
 </head>
 <body>
 
