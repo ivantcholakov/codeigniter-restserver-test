@@ -648,18 +648,20 @@ abstract class REST_Controller extends CI_Controller {
      */
     protected function preflight_checks()
     {
-        // Check to see if PHP is equal to or greater than 5.4.x
-        if (is_php('5.4') === FALSE)
-        {
-            // CodeIgniter 3 is recommended for v5.4 or above
-            throw new Exception('Using PHP v'.PHP_VERSION.', though PHP v5.4 or greater is required');
-        }
-
-        // Check to see if this is CI 3.x
-        if (explode('.', CI_VERSION, 2)[0] < 3)
-        {
-            throw new Exception('REST Server requires CodeIgniter 3.x');
-        }
+        // Removed by Ivan Tcholakov, 28-JUN-2015.
+        //// Check to see if PHP is equal to or greater than 5.4.x
+        //if (is_php('5.4') === FALSE)
+        //{
+        //    // CodeIgniter 3 is recommended for v5.4 or above
+        //    throw new Exception('Using PHP v'.PHP_VERSION.', though PHP v5.4 or greater is required');
+        //}
+        //
+        //// Check to see if this is CI 3.x
+        //if (explode('.', CI_VERSION, 2)[0] < 3)
+        //{
+        //    throw new Exception('REST Server requires CodeIgniter 3.x');
+        //}
+        //
     }
 
     /**
