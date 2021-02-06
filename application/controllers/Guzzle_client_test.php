@@ -6,7 +6,6 @@ class Guzzle_client_test extends CI_Controller {
 
     public function index()
     {
-        $php_required = '5.5';
         $this->load->helper('url');
 
         $result = null;
@@ -15,9 +14,10 @@ class Guzzle_client_test extends CI_Controller {
 
         $code_example = <<<EOT
 
-        \$user_id = 1;
-
+        \$this->load->helper('print_d');
         \$this->load->helper('url');
+
+        \$user_id = 1;
 
         \$client = new GuzzleHttp\Client();
         \$res = \$client->get(
@@ -36,11 +36,8 @@ class Guzzle_client_test extends CI_Controller {
 
 EOT;
 
-        if (is_php($php_required))
-        {
-            eval($code_example);
-        }
+        eval($code_example);
 
-        $this->load->view('guzzle_client_test', compact('php_required', 'code_example', 'result', 'status_code', 'content_type'));
+        $this->load->view('guzzle_client_test', compact('code_example', 'result', 'status_code', 'content_type'));
     }
 }

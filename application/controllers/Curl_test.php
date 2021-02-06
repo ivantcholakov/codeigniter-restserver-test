@@ -8,10 +8,11 @@ class Curl_test extends CI_Controller {
     {
         $code_example = <<<EOT
 
-        \$user_id = 1;
-
+        \$this->load->helper('print_d');
         \$this->load->helper('url');
         \$this->load->library('curl');
+
+        \$user_id = 1;
 
         \$this->curl->create(site_url('api/example/users/id/'.\$user_id.'/format/json'));
 

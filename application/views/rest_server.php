@@ -63,12 +63,23 @@
         border: 1px solid #D0D0D0;
         box-shadow: 0 0 8px #D0D0D0;
     }
+
+    .clearfix:after,
+    .clearfix:before {
+        content:" ";
+        display:table
+    }
+    .clearfix:after {
+        clear:both
+    }
+
     </style>
 
     <link rel="stylesheet" href="<?php echo base_url('assets/composer-asset/components/highlightjs/styles/github.css'); ?>" />
     <script src="<?php echo base_url('assets/composer-asset/components/modernizr/modernizr.js'); ?>"></script>
     <script src="<?php echo base_url('assets/composer-asset/components/jquery/jquery.min.js'); ?>"></script>
     <script src="<?php echo base_url('assets/composer-asset/components/highlightjs/highlight.pack.min.js'); ?>"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
 
 </head>
 <body>

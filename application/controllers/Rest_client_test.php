@@ -8,9 +8,10 @@ class Rest_client_test extends CI_Controller {
     {
         $code_example = <<<EOT
 
-        \$user_id = 1;
-
+        \$this->load->helper('print_d');
         \$this->load->helper('url');
+
+        \$user_id = 1;
 
         \$this->load->library('rest_client', array(
             'server' => site_url('api/example/'),

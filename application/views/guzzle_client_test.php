@@ -63,12 +63,23 @@
         border: 1px solid #D0D0D0;
         box-shadow: 0 0 8px #D0D0D0;
     }
+
+    .clearfix:after,
+    .clearfix:before {
+        content:" ";
+        display:table
+    }
+    .clearfix:after {
+        clear:both
+    }
+
     </style>
 
     <link rel="stylesheet" href="<?php echo base_url('assets/composer-asset/components/highlightjs/styles/github.css'); ?>" />
     <script src="<?php echo base_url('assets/composer-asset/components/modernizr/modernizr.js'); ?>"></script>
     <script src="<?php echo base_url('assets/composer-asset/components/jquery/jquery.min.js'); ?>"></script>
     <script src="<?php echo base_url('assets/composer-asset/components/highlightjs/highlight.pack.min.js'); ?>"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
 
 </head>
 <body>
@@ -85,35 +96,25 @@
             Code Example:
         </h3>
 
-        <code><pre><?php echo html_escape($code_example); ?></pre></code>
+        <pre><code class="lang-php"><?php echo html_escape($code_example); ?></code></pre>
 
-        <?php if (is_php($php_required)): ?>
+        <h3>
+            Result:
+        </h3>
 
-            <h3>
-                Result:
-            </h3>
+        <?php echo print_d($result); ?><div class="clearfix"></div>
 
-            <code><pre><?php var_dump($result); ?></pre></code>
+        <h3>
+            Status Code:
+        </h3>
 
-            <h3>
-                Status Code:
-            </h3>
+        <code><pre><?php echo html_escape($status_code); ?></pre></code>
 
-            <code><pre><?php echo html_escape($status_code); ?></pre></code>
+        <h3>
+            Content Type:
+        </h3>
 
-            <h3>
-                Content Type:
-            </h3>
-
-            <code><pre><?php echo html_escape($content_type); ?></pre></code>
-
-        <?php else: ?>
-
-            <h3>
-                PHP <?php echo $php_required ?> is required for this demo to work.
-            </h3>
-
-        <?php endif ?>
+        <code><pre><?php echo html_escape($content_type); ?></pre></code>
 
     </div>
 
