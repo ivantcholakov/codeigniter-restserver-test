@@ -6,7 +6,7 @@ A temporary repository for testing https://github.com/chriskacerguis/codeigniter
 
 Version: 3.0.3.14
 
-Requires PHP >= 5.3.7
+Requires PHP >= 7.2.5
 
 License for the original code: The MIT License http://opensource.org/licenses/MIT
 
