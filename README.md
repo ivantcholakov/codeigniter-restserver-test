@@ -4,7 +4,7 @@ https://github.com/ivantcholakov/codeigniter-restserver-test
 
 A temporary repository for testing https://github.com/chriskacerguis/codeigniter-restserver
 
-Version: 3.0.3.14
+Version: 3.1.11.0
 
 Requires PHP >= 7.2.5
 
