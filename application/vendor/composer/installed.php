@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => 'd7c0703db6d9819ad2f12817e0aa52a32b0a43e4',
+    'reference' => '0afcaf8c2460d9963cab22a738406e3751e7c900',
     'name' => '__root__',
   ),
   'versions' => 
@@ -18,7 +18,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => 'd7c0703db6d9819ad2f12817e0aa52a32b0a43e4',
+      'reference' => '0afcaf8c2460d9963cab22a738406e3751e7c900',
     ),
     'codeigniter/framework' => 
     array (
@@ -121,12 +121,12 @@
     ),
     'ivantcholakov/codeigniter-phpmailer' => 
     array (
-      'pretty_version' => 'v1.4.6',
-      'version' => '1.4.6.0',
+      'pretty_version' => 'v1.4.7',
+      'version' => '1.4.7.0',
       'aliases' => 
       array (
       ),
-      'reference' => 'fb873593743449bd080fcdabd3877265987a726f',
+      'reference' => '641b36ae9e6db008bc67e800e73e5d8a508b04f8',
     ),
     'oomphinc/composer-installers-extender' => 
     array (
@@ -139,12 +139,12 @@
     ),
     'phpmailer/phpmailer' => 
     array (
-      'pretty_version' => 'v6.2.0',
-      'version' => '6.2.0.0',
+      'pretty_version' => 'v6.3.0',
+      'version' => '6.3.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => 'e38888a75c070304ca5514197d4847a59a5c853f',
+      'reference' => '4a08cf4cdd2c38d12ee2b9fa69e5d235f37a6dcb',
     ),
     'psr/http-client' => 
     array (
@@ -194,7 +194,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => 'f7d723a10c7cb36e11430182f5813ecb1b887da0',
+      'reference' => 'a6bfc5a1416f0dde1f53b7737b2cf983352737b8',
     ),
     'roundcube/plugin-installer' => 
     array (
