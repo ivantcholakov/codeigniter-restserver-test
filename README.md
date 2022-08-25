@@ -4,9 +4,9 @@ https://github.com/ivantcholakov/codeigniter-restserver-test
 
 A temporary repository for testing https://github.com/chriskacerguis/codeigniter-restserver
 
-Version: 3.1.11.1
+Version: 3.1.13.0
 
-Requires PHP >= 7.2.5
+Requires PHP >= 7.3.0
 
 License for the original code: The MIT License http://opensource.org/licenses/MIT
 
