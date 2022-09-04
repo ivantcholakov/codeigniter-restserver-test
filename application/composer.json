@@ -21,14 +21,17 @@
         "php": ">=7.3.0",
         "oomphinc/composer-installers-extender": "^2.0",
         "codeigniter/framework": "3.1.13",
-        "roave/security-advisories": "dev-master",
-        "erusev/parsedown": "^1.7",
-        "erusev/parsedown-extra": "^0.8.1",
-        "ivantcholakov/codeigniter-phpmailer": "^1.5",
-        "guzzlehttp/guzzle": "~7.0",
+        "symfony/deprecation-contracts": "2.5.2",
+        "erusev/parsedown": "1.7.4",
+        "erusev/parsedown-extra": "0.8.1",
+        "ivantcholakov/codeigniter-phpmailer": "1.5.0",
+        "league/oauth2-google": "4.0.0",
+        "hayageek/oauth2-yahoo": "2.0.5",
+        "stevenmaguire/oauth2-microsoft": "2.2.0",
+        "guzzlehttp/guzzle": "7.5.0",
         "components/jquery": "3.6.0",
-        "components/modernizr": "^3.5",
-        "components/webfontloader": "^1.6",
-        "components/highlightjs": "^9.16"
+        "components/modernizr": "3.5.0",
+        "components/webfontloader": "1.6.3",
+        "components/highlightjs": "9.16.2"
    }
 }
