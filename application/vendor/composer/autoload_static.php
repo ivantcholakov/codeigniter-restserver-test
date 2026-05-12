@@ -14,97 +14,97 @@ class ComposerStaticInit54058c9d5fd9edc6c7a76b6c9c5c789d
     );
 
     public static $prefixLengthsPsr4 = array (
-        'S' => 
+        'S' =>
         array (
             'Stevenmaguire\\OAuth2\\Client\\' => 28,
         ),
-        'P' => 
+        'P' =>
         array (
             'Psr\\Http\\Message\\' => 17,
             'Psr\\Http\\Client\\' => 16,
             'PHPMailer\\PHPMailer\\' => 20,
         ),
-        'O' => 
+        'O' =>
         array (
             'OomphInc\\ComposerInstallersExtender\\' => 36,
         ),
-        'L' => 
+        'L' =>
         array (
             'League\\OAuth2\\Client\\' => 21,
         ),
-        'H' => 
+        'H' =>
         array (
             'Hayageek\\OAuth2\\Client\\' => 23,
         ),
-        'G' => 
+        'G' =>
         array (
             'GuzzleHttp\\Psr7\\' => 16,
             'GuzzleHttp\\Promise\\' => 19,
             'GuzzleHttp\\' => 11,
         ),
-        'C' => 
+        'C' =>
         array (
             'Composer\\Installers\\' => 20,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'Stevenmaguire\\OAuth2\\Client\\' => 
+        'Stevenmaguire\\OAuth2\\Client\\' =>
         array (
             0 => __DIR__ . '/..' . '/stevenmaguire/oauth2-microsoft/src',
         ),
-        'Psr\\Http\\Message\\' => 
+        'Psr\\Http\\Message\\' =>
         array (
             0 => __DIR__ . '/..' . '/psr/http-factory/src',
             1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
-        'Psr\\Http\\Client\\' => 
+        'Psr\\Http\\Client\\' =>
         array (
             0 => __DIR__ . '/..' . '/psr/http-client/src',
         ),
-        'PHPMailer\\PHPMailer\\' => 
+        'PHPMailer\\PHPMailer\\' =>
         array (
             0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
         ),
-        'OomphInc\\ComposerInstallersExtender\\' => 
+        'OomphInc\\ComposerInstallersExtender\\' =>
         array (
             0 => __DIR__ . '/..' . '/oomphinc/composer-installers-extender/src',
         ),
-        'League\\OAuth2\\Client\\' => 
+        'League\\OAuth2\\Client\\' =>
         array (
-            0 => __DIR__ . '/..' . '/league/oauth2-client/src',
-            1 => __DIR__ . '/..' . '/league/oauth2-google/src',
+            0 => __DIR__ . '/..' . '/league/oauth2-google/src',
+            1 => __DIR__ . '/..' . '/league/oauth2-client/src',
         ),
-        'Hayageek\\OAuth2\\Client\\' => 
+        'Hayageek\\OAuth2\\Client\\' =>
         array (
             0 => __DIR__ . '/..' . '/hayageek/oauth2-yahoo/src',
         ),
-        'GuzzleHttp\\Psr7\\' => 
+        'GuzzleHttp\\Psr7\\' =>
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/psr7/src',
         ),
-        'GuzzleHttp\\Promise\\' => 
+        'GuzzleHttp\\Promise\\' =>
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/promises/src',
         ),
-        'GuzzleHttp\\' => 
+        'GuzzleHttp\\' =>
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
         ),
-        'Composer\\Installers\\' => 
+        'Composer\\Installers\\' =>
         array (
             0 => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers',
         ),
     );
 
     public static $prefixesPsr0 = array (
-        'P' => 
+        'P' =>
         array (
-            'ParsedownExtra' => 
+            'ParsedownExtra' =>
             array (
                 0 => __DIR__ . '/..' . '/erusev/parsedown-extra',
             ),
-            'Parsedown' => 
+            'Parsedown' =>
             array (
                 0 => __DIR__ . '/..' . '/erusev/parsedown',
             ),
