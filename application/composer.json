@@ -18,10 +18,10 @@
         }
     },
     "require": {
-        "php": ">=7.3.0",
+        "php": ">=8.0.2",
         "oomphinc/composer-installers-extender": "^2.0",
         "codeigniter/framework": "3.1.13",
-        "symfony/deprecation-contracts": "2.5.2",
+        "symfony/deprecation-contracts": "3.0.2",
         "erusev/parsedown": "1.8.0",
         "erusev/parsedown-extra": "0.8.1",
         "ivantcholakov/codeigniter-phpmailer": "1.5.0",
