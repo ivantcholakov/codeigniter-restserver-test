@@ -29,7 +29,7 @@
         "hayageek/oauth2-yahoo": "2.0.5",
         "stevenmaguire/oauth2-microsoft": "2.2.0",
         "guzzlehttp/guzzle": "7.5.0",
-        "components/jquery": "3.6.0",
+        "components/jquery": "4.0.0",
         "components/modernizr": "3.5.0",
         "components/webfontloader": "1.6.3",
         "components/highlightjs": "9.16.2"
