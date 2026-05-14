@@ -351,7 +351,7 @@ class Format {
         }
 
         // Apply the headings
-        fputcsv($handle, $headings, $delimiter, $enclosure);
+        fputcsv($handle, $headings, $delimiter, $enclosure, '');
 
         foreach ($data as $record)
         {
@@ -367,7 +367,7 @@ class Format {
             $record = @ array_map('strval', $record);
 
             // Returns the length of the string written or FALSE
-            fputcsv($handle, $record, $delimiter, $enclosure);
+            fputcsv($handle, $record, $delimiter, $enclosure, '');
         }
 
         // Reset the file pointer

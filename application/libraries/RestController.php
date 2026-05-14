@@ -155,14 +155,14 @@ class RestController extends \CI_Controller
 
     /**
      * This defines the rest format
-     * Must be overridden it in a controller so that it is set
+     * Must be overridden it in a controller so that it is set.
      *
-     * @var string|NULL
+     * @var string|null
      */
-    protected $rest_format = NULL;
+    protected $rest_format = null;
 
     /**
-     * Defines the list of method properties such as limit, log and level
+     * Defines the list of method properties such as limit, log and level.
      *
      * @var array
      */
@@ -396,11 +396,11 @@ class RestController extends \CI_Controller
         $this->preflight_checks();
 
         // Set the default value of global xss filtering. Same approach as CodeIgniter 3
-        $this->_enable_xss = ($this->config->item('global_xss_filtering') === TRUE);
+        $this->_enable_xss = ($this->config->item('global_xss_filtering') === true);
 
         // Don't try to parse template variables like {elapsed_time} and {memory_usage}
         // when output is displayed for not damaging data accidentally
-        $this->output->parse_exec_vars = FALSE;
+        $this->output->parse_exec_vars = false;
 
         // Start the timer for how long the request takes
         $this->_start_rtime = microtime(TRUE);
@@ -619,8 +619,7 @@ class RestController extends \CI_Controller
         $this->_end_rtime = microtime(TRUE);
 
         // Log the loading time to the log table
-        if ($this->config->item('rest_enable_logging') === TRUE)
-        {
+        if ($this->config->item('rest_enable_logging') === true) {
             $this->_log_access_time();
         }
     }
@@ -664,9 +663,9 @@ class RestController extends \CI_Controller
         // Should we answer if not over SSL?
         if ($this->config->item('force_https') && $this->request->ssl === false) {
             $this->response([
-                    $this->config->item('rest_status_field_name') => FALSE,
-                    $this->config->item('rest_message_field_name') => $this->lang->line('text_rest_unsupported')
-                ], self::HTTP_FORBIDDEN);
+                $this->config->item('rest_status_field_name')  => false,
+                $this->config->item('rest_message_field_name') => $this->lang->line('text_rest_unsupported'),
+            ], self::HTTP_FORBIDDEN);
 
             $this->is_valid_request = false;
         }
@@ -1034,22 +1033,20 @@ class RestController extends \CI_Controller
         $api_key_variable = $this->config->item('rest_key_name');
 
         // Work out the name of the SERVER entry based on config
-        $key_name = 'HTTP_' . strtoupper(str_replace('-', '_', $api_key_variable));
+        $key_name = 'HTTP_'.strtoupper(str_replace('-', '_', $api_key_variable));
 
-        $this->rest->key = NULL;
-        $this->rest->level = NULL;
-        $this->rest->user_id = NULL;
-        $this->rest->ignore_limits = FALSE;
+        $this->rest->key = null;
+        $this->rest->level = null;
+        $this->rest->user_id = null;
+        $this->rest->ignore_limits = false;
 
         // Find the key from server or arguments
-        if (($key = isset($this->_args[$api_key_variable]) ? $this->_args[$api_key_variable] : $this->input->server($key_name)))
-        {
-            if ( ! ($row = $this->rest->db->where($this->config->item('rest_key_column'), $key)->get($this->config->item('rest_keys_table'))->row()))
-            {
-                return FALSE;
-            }
+        if ($key = isset($this->_args[$api_key_variable]) ? $this->_args[$api_key_variable] : $this->input->server($key_name)) {
+            $this->rest->key = $key;
 
-            $this->rest->key = $row->{$this->config->item('rest_key_column')};
+            if (!($row = $this->rest->db->where($this->config->item('rest_key_column'), $key)->get($this->config->item('rest_keys_table'))->row())) {
+                return false;
+            }
 
             isset($row->user_id) && $this->rest->user_id = $row->user_id;
             isset($row->level) && $this->rest->level = $row->level;
@@ -1066,12 +1063,11 @@ class RestController extends \CI_Controller
                 if (isset($row->ip_addresses)) {
                     // multiple ip addresses must be separated using a comma, explode and loop
                     $list_ip_addresses = explode(',', $row->ip_addresses);
+                    $ip_address = $this->input->ip_address();
                     $found_address = false;
 
-                    foreach ($list_ip_addresses as $ip_address)
-                    {
-                        if ($this->input->ip_address() === trim((string) $ip_address))
-                        {
+                    foreach ($list_ip_addresses as $list_ip) {
+                        if ($ip_address === trim($list_ip)) {
                             // there is a match, set the the value to TRUE and break out of the loop
                             $found_address = true;
                             break;
@@ -1141,15 +1137,17 @@ class RestController extends \CI_Controller
         // Insert the request into the log table
         $is_inserted = $this->rest->db
             ->insert(
-                $this->config->item('rest_logs_table'), [
-                'uri' => $this->uri->uri_string(),
-                'method' => $this->request->method,
-                'params' => $this->_args ? ($this->config->item('rest_logs_json_params') === TRUE ? json_encode($this->_args) : serialize($this->_args)) : NULL,
-                'api_key' => isset($this->rest->key) ? $this->rest->key : '',
-                'ip_address' => $this->input->ip_address(),
-                'time' => time(),
-                'authorized' => $authorized
-            ]);
+                $this->config->item('rest_logs_table'),
+                [
+                    'uri'        => $this->uri->uri_string(),
+                    'method'     => $this->request->method,
+                    'params'     => $this->_args ? ($this->config->item('rest_logs_json_params') === true ? json_encode($this->_args) : serialize($this->_args)) : null,
+                    'api_key'    => isset($this->rest->key) ? $this->rest->key : '',
+                    'ip_address' => $this->input->ip_address(),
+                    'time'       => time(),
+                    'authorized' => $authorized,
+                ]
+            );
 
         // Get the last insert id to update at a later stage of the request
         $this->_insert_id = $this->rest->db->insert_id();
@@ -1174,30 +1172,28 @@ class RestController extends \CI_Controller
 
         $api_key = isset($this->rest->key) ? $this->rest->key : '';
 
-        switch ($this->config->item('rest_limits_method'))
-        {
-          case 'IP_ADDRESS':
-            $limited_uri = 'ip-address:' .$this->input->ip_address();
-            $api_key = $this->input->ip_address();
-            break;
+        switch ($this->config->item('rest_limits_method')) {
+            case 'IP_ADDRESS':
+                $api_key = $this->input->ip_address();
+                $limited_uri = 'ip-address:'.$api_key;
+                break;
 
-          case 'API_KEY':
-            $limited_uri = 'api-key:' . $api_key;
-            break;
+            case 'API_KEY':
+                $limited_uri = 'api-key:'.$api_key;
+                break;
 
-          case 'METHOD_NAME':
-            $limited_uri = 'method-name:' . $controller_method;
-            break;
+            case 'METHOD_NAME':
+                $limited_uri = 'method-name:'.$controller_method;
+                break;
 
-          case 'ROUTED_URL':
-          default:
-            $limited_uri = $this->uri->ruri_string();
-            if (strpos(strrev($limited_uri), strrev($this->response->format)) === 0)
-            {
-                $limited_uri = substr($limited_uri,0, -strlen($this->response->format) - 1);
-            }
-            $limited_uri = 'uri:'.$limited_uri.':'.$this->request->method; // It's good to differentiate GET from PUT
-            break;
+            case 'ROUTED_URL':
+            default:
+                $limited_uri = $this->uri->ruri_string();
+                if (strpos(strrev($limited_uri), strrev($this->response->format)) === 0) {
+                    $limited_uri = substr($limited_uri, 0, -strlen($this->response->format) - 1);
+                }
+                $limited_uri = 'uri:'.$limited_uri.':'.$this->request->method; // It's good to differentiate GET from PUT
+                break;
         }
 
         if (isset($this->methods[$controller_method]['limit']) === false) {
@@ -1601,6 +1597,10 @@ class RestController extends \CI_Controller
     public function post($key = null, $xss_clean = null)
     {
         if ($key === null) {
+            foreach (new RecursiveIteratorIterator(new RecursiveArrayIterator($this->_post_args), RecursiveIteratorIterator::CATCH_GET_CHILD) as $key => $value) {
+                $this->_post_args[$key] = $this->_xss_clean($this->_post_args[$key], $xss_clean);
+            }
+
             return $this->_post_args;
         }
 
@@ -1717,33 +1717,32 @@ class RestController extends \CI_Controller
      *
      * @return bool
      */
-    protected function _perform_ldap_auth($username = '', $password = NULL)
+    protected function _perform_ldap_auth($username = '', $password = null)
     {
-        if (empty($username))
-        {
+        if (empty($username)) {
             log_message('debug', 'LDAP Auth: failure, empty username');
-            return FALSE;
+
+            return false;
         }
 
         log_message('debug', 'LDAP Auth: Loading configuration');
 
-        $this->config->load('ldap', TRUE);
+        $this->config->load('ldap', true);
 
         $ldap = [
             'timeout' => $this->config->item('timeout', 'ldap'),
-            'host' => $this->config->item('server', 'ldap'),
-            'port' => $this->config->item('port', 'ldap'),
-            'rdn' => $this->config->item('binduser', 'ldap'),
-            'pass' => $this->config->item('bindpw', 'ldap'),
-            'basedn' => $this->config->item('basedn', 'ldap'),
+            'host'    => $this->config->item('server', 'ldap'),
+            'port'    => $this->config->item('port', 'ldap'),
+            'rdn'     => $this->config->item('binduser', 'ldap'),
+            'pass'    => $this->config->item('bindpw', 'ldap'),
+            'basedn'  => $this->config->item('basedn', 'ldap'),
         ];
 
-        log_message('debug', 'LDAP Auth: Connect to ' . (isset($ldaphost) ? $ldaphost : '[ldap not configured]'));
+        log_message('debug', 'LDAP Auth: Connect to '.(isset($ldap['host']) ? $ldap['host'] : '[ldap not configured]'));
 
         // Connect to the ldap server
         $ldapconn = ldap_connect($ldap['host'], $ldap['port']);
-        if ($ldapconn)
-        {
+        if ($ldapconn) {
             log_message('debug', 'Setting timeout to '.$ldap['timeout'].' seconds');
 
             ldap_set_option($ldapconn, LDAP_OPT_NETWORK_TIMEOUT, $ldap['timeout']);
@@ -1754,48 +1753,48 @@ class RestController extends \CI_Controller
             $ldapbind = ldap_bind($ldapconn, $ldap['rdn'], $ldap['pass']);
 
             // Verify the binding
-            if ($ldapbind === FALSE)
-            {
+            if ($ldapbind === false) {
                 log_message('error', 'LDAP Auth: bind was unsuccessful');
-                return FALSE;
+
+                return false;
             }
 
             log_message('debug', 'LDAP Auth: bind successful');
         }
 
         // Search for user
-        if (($res_id = ldap_search($ldapconn, $ldap['basedn'], "uid=$username")) === FALSE)
-        {
+        if (($res_id = ldap_search($ldapconn, $ldap['basedn'], "uid=$username")) === false) {
             log_message('error', 'LDAP Auth: User '.$username.' not found in search');
-            return FALSE;
+
+            return false;
         }
 
         // Modified by Ivan Tcholakov, 10-JUL-2015.
-        //if (ldap_count_entries($ldapconn, $res_id) !== 1)
-        if (ldap_count_entries($ldapconn, $res_id) != 1)
+        //if (ldap_count_entries($ldapconn, $res_id) !== 1) {
+        if (ldap_count_entries($ldapconn, $res_id) != 1) {
         //
-        {
             log_message('error', 'LDAP Auth: Failure, username '.$username.'found more than once');
-            return FALSE;
+
+            return false;
         }
 
-        if (($entry_id = ldap_first_entry($ldapconn, $res_id)) === FALSE)
-        {
+        if (($entry_id = ldap_first_entry($ldapconn, $res_id)) === false) {
             log_message('error', 'LDAP Auth: Failure, entry of search result could not be fetched');
-            return FALSE;
+
+            return false;
         }
 
-        if (($user_dn = ldap_get_dn($ldapconn, $entry_id)) === FALSE)
-        {
+        if (($user_dn = ldap_get_dn($ldapconn, $entry_id)) === false) {
             log_message('error', 'LDAP Auth: Failure, user-dn could not be fetched');
-            return FALSE;
+
+            return false;
         }
 
         // User found, could not authenticate as user
-        if (($link_id = ldap_bind($ldapconn, $user_dn, $password)) === FALSE)
-        {
-            log_message('error', 'LDAP Auth: Failure, username/password did not match: ' . $user_dn);
-            return FALSE;
+        if (($link_id = ldap_bind($ldapconn, $user_dn, $password)) === false) {
+            log_message('error', 'LDAP Auth: Failure, username/password did not match: '.$user_dn);
+
+            return false;
         }
 
         log_message('debug', 'LDAP Auth: Success '.$user_dn.' authenticated successfully');
@@ -1917,22 +1916,21 @@ class RestController extends \CI_Controller
         if (!$this->session->userdata($key)) {
             // Display an error response
             $this->response([
-                    $this->config->item('rest_status_field_name') => FALSE,
-                    $this->config->item('rest_message_field_name') => $this->lang->line('text_rest_unauthorized')
-                ], self::HTTP_UNAUTHORIZED);
+                $this->config->item('rest_status_field_name')  => false,
+                $this->config->item('rest_message_field_name') => $this->lang->line('text_rest_unauthorized'),
+            ], self::HTTP_UNAUTHORIZED);
         }
     }
 
     /**
-     * Prepares for basic authentication
+     * Prepares for basic authentication.
      *
      * @return void
      */
     protected function _prepare_basic_auth()
     {
         // If whitelist is enabled it has the first chance to kick them out
-        if ($this->config->item('rest_ip_whitelist_enabled'))
-        {
+        if ($this->config->item('rest_ip_whitelist_enabled')) {
             $this->_check_whitelist_auth();
         }
 
@@ -1940,25 +1938,20 @@ class RestController extends \CI_Controller
         $username = $this->input->server('PHP_AUTH_USER');
         $http_auth = $this->input->server('HTTP_AUTHENTICATION') ?: $this->input->server('HTTP_AUTHORIZATION');
 
-        $password = NULL;
-        if ($username !== NULL)
-        {
+        $password = null;
+        if ($username !== null) {
             $password = $this->input->server('PHP_AUTH_PW');
-        }
-        elseif ($http_auth !== NULL)
-        {
+        } elseif ($http_auth !== null) {
             // If the authentication header is set as basic, then extract the username and password from
             // HTTP_AUTHORIZATION e.g. my_username:my_password. This is passed in the .htaccess file
-            if (strpos(strtolower($http_auth), 'basic') === 0)
-            {
+            if (strpos(strtolower($http_auth), 'basic') === 0) {
                 // Search online for HTTP_AUTHORIZATION workaround to explain what this is doing
                 list($username, $password) = explode(':', base64_decode(substr($this->input->server('HTTP_AUTHORIZATION'), 6)));
             }
         }
 
         // Check if the user is logged into the system
-        if ($this->_check_login($username, $password) === FALSE)
-        {
+        if ($this->_check_login($username, $password) === false) {
             $this->_force_login();
         }
     }
@@ -1971,16 +1964,14 @@ class RestController extends \CI_Controller
     protected function _prepare_digest_auth()
     {
         // If whitelist is enabled it has the first chance to kick them out
-        if ($this->config->item('rest_ip_whitelist_enabled'))
-        {
+        if ($this->config->item('rest_ip_whitelist_enabled')) {
             $this->_check_whitelist_auth();
         }
 
         // We need to test which server authentication variable to use,
         // because the PHP ISAPI module in IIS acts different from CGI
         $digest_string = $this->input->server('PHP_AUTH_DIGEST');
-        if ($digest_string === NULL)
-        {
+        if ($digest_string === null) {
             $digest_string = $this->input->server('HTTP_AUTHORIZATION');
         }
 
@@ -1988,8 +1979,7 @@ class RestController extends \CI_Controller
 
         // The $_SESSION['error_prompted'] variable is used to ask the password
         // again if none given or if the user enters wrong auth information
-        if (empty($digest_string))
-        {
+        if (empty($digest_string)) {
             $this->_force_login($unique_id);
         }
 
@@ -1999,9 +1989,8 @@ class RestController extends \CI_Controller
         $digest = (empty($matches[1]) || empty($matches[2])) ? [] : array_combine($matches[1], $matches[2]);
 
         // For digest authentication the library function should return already stored md5(username:restrealm:password) for that username see rest.php::auth_library_function config
-        $username = $this->_check_login($digest['username'], TRUE);
-        if (array_key_exists('username', $digest) === FALSE || $username === FALSE)
-        {
+        $username = $this->_check_login($digest['username'], true);
+        if (isset($digest['username']) === false || $username === false) {
             $this->_force_login($unique_id);
         }
 
@@ -2009,13 +1998,12 @@ class RestController extends \CI_Controller
         $valid_response = md5($username.':'.$digest['nonce'].':'.$digest['nc'].':'.$digest['cnonce'].':'.$digest['qop'].':'.$md5);
 
         // Check if the string don't compare (case-insensitive)
-        if (strcasecmp($digest['response'], $valid_response) !== 0)
-        {
+        if (strcasecmp($digest['response'], $valid_response) !== 0) {
             // Display an error response
             $this->response([
-                    $this->config->item('rest_status_field_name') => FALSE,
-                    $this->config->item('rest_message_field_name') => $this->lang->line('text_rest_invalid_credentials')
-                ], self::HTTP_UNAUTHORIZED);
+                $this->config->item('rest_status_field_name')  => false,
+                $this->config->item('rest_message_field_name') => $this->lang->line('text_rest_invalid_credentials'),
+            ], self::HTTP_UNAUTHORIZED);
         }
     }
 
@@ -2030,13 +2018,12 @@ class RestController extends \CI_Controller
         $pattern = sprintf('/(?:,\s*|^)\Q%s\E(?=,\s*|$)/m', $this->input->ip_address());
 
         // Returns 1, 0 or FALSE (on error only). Therefore implicitly convert 1 to TRUE
-        if (preg_match($pattern, $this->config->item('rest_ip_blacklist')))
-        {
+        if (preg_match($pattern, $this->config->item('rest_ip_blacklist'))) {
             // Display an error response
             $this->response([
-                    $this->config->item('rest_status_field_name') => FALSE,
-                    $this->config->item('rest_message_field_name') => $this->lang->line('text_rest_ip_denied')
-                ], self::HTTP_UNAUTHORIZED);
+                $this->config->item('rest_status_field_name')  => false,
+                $this->config->item('rest_message_field_name') => $this->lang->line('text_rest_ip_denied'),
+            ], self::HTTP_UNAUTHORIZED);
         }
     }
 
@@ -2051,19 +2038,17 @@ class RestController extends \CI_Controller
 
         array_push($whitelist, '127.0.0.1', '0.0.0.0');
 
-        foreach ($whitelist as &$ip)
-        {
+        foreach ($whitelist as &$ip) {
             // As $ip is a reference, trim leading and trailing whitespace, then store the new value
             // using the reference
             $ip = trim((string) $ip);
         }
 
-        if (in_array($this->input->ip_address(), $whitelist) === FALSE)
-        {
+        if (in_array($this->input->ip_address(), $whitelist) === false) {
             $this->response([
-                    $this->config->item('rest_status_field_name') => FALSE,
-                    $this->config->item('rest_message_field_name') => $this->lang->line('text_rest_ip_unauthorized')
-                ], self::HTTP_UNAUTHORIZED);
+                $this->config->item('rest_status_field_name')  => false,
+                $this->config->item('rest_message_field_name') => $this->lang->line('text_rest_ip_unauthorized'),
+            ], self::HTTP_UNAUTHORIZED);
         }
     }
 
@@ -2077,20 +2062,18 @@ class RestController extends \CI_Controller
      */
     protected function _force_login($nonce = '')
     {
-        $rest_auth = $this->config->item('rest_auth');
+        $rest_auth = strtolower($this->config->item('rest_auth'));
         $rest_realm = $this->config->item('rest_realm');
-        if (strtolower($rest_auth) === 'basic')
-        {
+        if ($rest_auth === 'basic') {
             // See http://tools.ietf.org/html/rfc2617#page-5
             header('WWW-Authenticate: Basic realm="'.$rest_realm.'"');
-        }
-        elseif (strtolower($rest_auth) === 'digest')
-        {
+        } elseif ($rest_auth === 'digest') {
             // See http://tools.ietf.org/html/rfc2617#page-18
             header(
                 'WWW-Authenticate: Digest realm="'.$rest_realm
                 .'", qop="auth", nonce="'.$nonce
-                .'", opaque="' . md5($rest_realm).'"');
+                .'", opaque="'.md5($rest_realm).'"'
+            );
         }
 
         if ($this->config->item('strict_api_and_auth') === true) {
@@ -2099,9 +2082,9 @@ class RestController extends \CI_Controller
 
         // Display an error response
         $this->response([
-                $this->config->item('rest_status_field_name') => FALSE,
-                $this->config->item('rest_message_field_name') => $this->lang->line('text_rest_unauthorized')
-            ], self::HTTP_UNAUTHORIZED);
+            $this->config->item('rest_status_field_name')  => false,
+            $this->config->item('rest_message_field_name') => $this->lang->line('text_rest_unauthorized'),
+        ], self::HTTP_UNAUTHORIZED);
     }
 
     /**
@@ -2120,9 +2103,12 @@ class RestController extends \CI_Controller
         $payload['rtime'] = $this->_end_rtime - $this->_start_rtime;
 
         return $this->rest->db->update(
-                $this->config->item('rest_logs_table'), $payload, [
-                'id' => $this->_insert_id
-            ]);
+            $this->config->item('rest_logs_table'),
+            $payload,
+            [
+                'id' => $this->_insert_id,
+            ]
+        );
     }
 
     /**
@@ -2143,9 +2129,12 @@ class RestController extends \CI_Controller
         $payload['response_code'] = $http_code;
 
         return $this->rest->db->update(
-            $this->config->item('rest_logs_table'), $payload, [
-            'id' => $this->_insert_id
-        ]);
+            $this->config->item('rest_logs_table'),
+            $payload,
+            [
+                'id' => $this->_insert_id,
+            ]
+        );
     }
 
     /**
@@ -2156,37 +2145,33 @@ class RestController extends \CI_Controller
     protected function _check_access()
     {
         // If we don't want to check access, just return TRUE
-        if ($this->config->item('rest_enable_access') === FALSE)
-        {
-            return TRUE;
-        }
-
-        //check if the key has all_access
-        $accessRow = $this->rest->db
-            ->where('key', $this->rest->key)
-            ->get($this->config->item('rest_access_table'))->row_array();
-
-        if (!empty($accessRow) && !empty($accessRow['all_access']))
-        {
-            return TRUE;
+        if ($this->config->item('rest_enable_access') === false) {
+            return true;
         }
 
         // Fetch controller based on path and controller name
         $controller = implode(
-            '/', [
-            $this->router->directory,
-            $this->router->class
-        ]);
+            '/',
+            [
+                $this->router->directory,
+                $this->router->class,
+            ]
+        );
 
         // Remove any double slashes for safety
         $controller = str_replace('//', '/', $controller);
 
-        // Query the access table and get the number of results
-        return $this->rest->db
+        //check if the key has all_access
+        $accessRow = $this->rest->db
             ->where('key', $this->rest->key)
             ->where('controller', $controller)
-            ->get($this->config->item('rest_access_table'))
-            ->num_rows() > 0;
+            ->get($this->config->item('rest_access_table'))->row_array();
+
+        if (!empty($accessRow) && !empty($accessRow['all_access'])) {
+            return true;
+        }
+
+        return false;
     }
 
     /**
@@ -2221,9 +2206,19 @@ class RestController extends \CI_Controller
             }
         }
 
+        // If there are headers that should be forced in the CORS check, add them now
+        if (is_array($this->config->item('forced_cors_headers'))) {
+            foreach ($this->config->item('forced_cors_headers') as $header => $value) {
+                header($header.': '.$value);
+            }
+        }
+
         // If the request HTTP method is 'OPTIONS', kill the response and send it to the client
-        if ($this->input->method() === 'options')
-        {
+        if ($this->input->method() === 'options') {
+            // Load DB if needed for logging
+            if (!isset($this->rest->db) && $this->config->item('rest_enable_logging')) {
+                $this->rest->db = $this->load->database($this->config->item('rest_database_group'), true);
+            }
             exit;
         }
     }
