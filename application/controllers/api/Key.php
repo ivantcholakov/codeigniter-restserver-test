@@ -6,9 +6,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 /** @noinspection PhpIncludeInspection */
 //require APPPATH . '/libraries/REST_Controller.php';
 
-// use namespace
-use chriskacerguis\RestServer\RestController;
-
 /**
  * Keys Controller
  * This is a basic Key Management REST controller to make and delete keys
