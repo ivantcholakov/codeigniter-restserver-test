@@ -7,7 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 //require APPPATH . '/libraries/REST_Controller.php';
 
 // use namespace
-use Restserver\Libraries\REST_Controller;
+use chriskacerguis\RestServer\RestController;
 
 /**
  * This is an example of a few basic user interaction methods you could use

@@ -7,7 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 //require APPPATH . '/libraries/REST_Controller.php';
 
 // use namespace
-use Restserver\Libraries\REST_Controller;
+use chriskacerguis\RestServer\RestController;
 
 /**
  * Keys Controller
