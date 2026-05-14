@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Testing a POST request</title>
+    <link rel="icon" type="image/x-icon" href="<?php echo base_url('favicon.ico'); ?>">
 
     <style>
 

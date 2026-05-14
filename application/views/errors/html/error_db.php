@@ -5,6 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <head>
 <meta charset="utf-8">
 <title>Database Error</title>
+<link rel="icon" type="image/x-icon" href="<?php echo base_url('favicon.ico'); ?>">
 <style type="text/css">
 
 ::selection { background-color: #E13300; color: white; }

@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Accessing the REST Server Using the Curl Library</title>
+    <link rel="icon" type="image/x-icon" href="<?php echo base_url('favicon.ico'); ?>">
 
     <style>
 
