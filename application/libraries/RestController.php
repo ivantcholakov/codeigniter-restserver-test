@@ -967,9 +967,8 @@ class RestController extends \CI_Controller
     protected function _log_request($authorized = false)
     {
         // Added by Ivan Tcholakov, 19-OCT-2017.
-        if (!isset($this->rest->db) || !is_object($this->rest->db))
-        {
-            return FALSE;
+        if (!isset($this->rest->db) || !is_object($this->rest->db)) {
+            return false;
         }
         //
 
