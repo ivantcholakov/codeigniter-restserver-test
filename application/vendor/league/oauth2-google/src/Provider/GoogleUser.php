@@ -17,7 +17,7 @@ class GoogleUser implements ResourceOwnerInterface
         $this->response = $response;
     }
 
-    public function getId()
+    public function getId(): mixed
     {
         return $this->response['sub'];
     }
@@ -70,6 +70,36 @@ class GoogleUser implements ResourceOwnerInterface
     public function getEmail(): ?string
     {
         return $this->getResponseValue('email');
+    }
+
+    /**
+     * Get email_verified attribute.
+     *
+     * @return bool|null
+     */
+    public function getEmailVerified(): ?bool
+    {
+        return $this->getResponseValue('email_verified');
+    }
+
+    /**
+     * Returns whether the email is trustable enough to be used for authentication purpose.
+     *
+     * @see https://developers.google.com/identity/gsi/web/guides/verify-google-id-token
+     */
+    public function isEmailTrustworthy(): bool
+    {
+        $email = $this->getEmail();
+        if (! $email) {
+            return false;
+        }
+        if ('@gmail.com' === substr($email, -10)) {
+            return true;
+        }
+        if ($this->getHostedDomain() && $this->getEmailVerified()) {
+            return true;
+        }
+        return false;
     }
 
     /**

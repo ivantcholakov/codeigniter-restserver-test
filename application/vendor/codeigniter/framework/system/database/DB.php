@@ -180,7 +180,6 @@ function &DB($params = '', $query_builder_override = NULL)
 			 * @see	CI_DB_query_builder
 			 * @see	CI_DB_driver
 			 */
-			#[\AllowDynamicProperties]
 			class CI_DB extends CI_DB_query_builder { }
 		}
 	}
@@ -189,7 +188,6 @@ function &DB($params = '', $query_builder_override = NULL)
 		/**
 		 * @ignore
 		 */
-		#[\AllowDynamicProperties]
 		class CI_DB extends CI_DB_driver { }
 	}
 
