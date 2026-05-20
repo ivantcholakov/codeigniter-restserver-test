@@ -18,7 +18,7 @@ function pre_system_1_autoload($class) {
 
     switch ($class) {
 
-        case 'Restserver\\Libraries\\REST_Controller':
+        case 'chriskacerguis\\RestServer':
         case 'REST_Controller':
             require_once APPPATH . '/libraries/REST_Controller.php';
             return;
