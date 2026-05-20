@@ -13,9 +13,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 | WARNING: You MUST set this value!
 |
-| If it is not set, then CodeIgniter will try guess the protocol and path
-| your installation, but due to security concerns the hostname will be set
-| to $_SERVER['SERVER_ADDR'] if available, or localhost otherwise.
+| If it is not set, then CodeIgniter will try to guess the protocol and
+| path to your installation, but due to security concerns the hostname will
+| be set to $_SERVER['SERVER_ADDR'] if available, or localhost otherwise.
 | The auto-detection mechanism exists only for convenience during
 | development and MUST NOT be used in production!
 |
@@ -121,8 +121,8 @@ $config['enable_hooks'] = TRUE;
 | This item allows you to set the filename/classname prefix when extending
 | native libraries.  For more information please see the user guide:
 |
-| https://codeigniter.com/user_guide/general/core_classes.html
-| https://codeigniter.com/user_guide/general/creating_libraries.html
+| https://codeigniter.com/userguide3/general/core_classes.html
+| https://codeigniter.com/userguide3/general/creating_libraries.html
 |
 */
 $config['subclass_prefix'] = 'MY_';
@@ -332,7 +332,7 @@ $config['cache_query_string'] = FALSE;
 | If you use the Encryption class, you must set an encryption key.
 | See the user guide for more info.
 |
-| https://codeigniter.com/user_guide/libraries/encryption.html
+| https://codeigniter.com/userguide3/libraries/encryption.html
 |
 */
 $config['encryption_key'] = '';
@@ -352,7 +352,7 @@ $config['encryption_key'] = '';
 |
 | 'sess_samesite'
 |
-|    Session cookie SameSite attribute: Lax (default), Strict or None
+|	Session cookie SameSite attribute: Lax (default), Strict or None
 |
 | 'sess_expiration'
 |
@@ -411,6 +411,7 @@ $config['sess_regenerate_destroy'] = FALSE;
 | 'cookie_path'     = Typically will be a forward slash
 | 'cookie_secure'   = Cookie will only be set if a secure HTTPS connection exists.
 | 'cookie_httponly' = Cookie will only be accessible via HTTP(S) (no javascript)
+| 'cookie_samesite' = Cookie's samesite attribute (Lax, Strict or None)
 |
 | Note: These settings (with the exception of 'cookie_prefix' and
 |       'cookie_httponly') will also affect sessions.
@@ -421,6 +422,7 @@ $config['cookie_domain']	= '';
 $config['cookie_path']		= '/';
 $config['cookie_secure']	= FALSE;
 $config['cookie_httponly'] 	= FALSE;
+$config['cookie_samesite'] 	= 'Lax';
 
 /*
 |--------------------------------------------------------------------------
