@@ -44,217 +44,6 @@
             "install-path": "../codeigniter/framework"
         },
         {
-            "name": "components/highlightjs",
-            "version": "v9.16.2",
-            "version_normalized": "9.16.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/components/highlightjs.git",
-                "reference": "1dea393aa70365843cfec34b1f365930d383bdfe"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/components/highlightjs/zipball/1dea393aa70365843cfec34b1f365930d383bdfe",
-                "reference": "1dea393aa70365843cfec34b1f365930d383bdfe",
-                "shasum": ""
-            },
-            "time": "2019-11-05T19:09:33+00:00",
-            "type": "component",
-            "extra": {
-                "component": {
-                    "shim": {
-                        "exports": "hljs"
-                    },
-                    "files": [
-                        "styles/*"
-                    ],
-                    "scripts": [
-                        "highlight.pack.min.js"
-                    ]
-                }
-            },
-            "installation-source": "dist",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Ivan Sagalaev",
-                    "email": "maniac@softwaremaniacs.org",
-                    "homepage": "http://softwaremaniacs.org"
-                }
-            ],
-            "description": "Highlight.js highlights syntax in code examples on blogs, forums and in fact on any web pages.",
-            "support": {
-                "issues": "https://github.com/components/highlightjs/issues",
-                "source": "https://github.com/components/highlightjs/tree/v9.16.2"
-            },
-            "install-path": "../../../assets/composer-asset/components/highlightjs"
-        },
-        {
-            "name": "components/jquery",
-            "version": "4.0.0",
-            "version_normalized": "4.0.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/components/jquery.git",
-                "reference": "594f9dd922c3b12519c8d52bde744b79fd2ca816"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/components/jquery/zipball/594f9dd922c3b12519c8d52bde744b79fd2ca816",
-                "reference": "594f9dd922c3b12519c8d52bde744b79fd2ca816",
-                "shasum": ""
-            },
-            "time": "2026-05-11T18:06:23+00:00",
-            "type": "component",
-            "extra": {
-                "component": {
-                    "files": [
-                        "jquery.min.js",
-                        "jquery.min.map",
-                        "jquery.slim.js",
-                        "jquery.slim.min.js",
-                        "jquery.slim.min.map"
-                    ],
-                    "scripts": [
-                        "jquery.js"
-                    ]
-                }
-            },
-            "installation-source": "dist",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "JS Foundation and other contributors"
-                }
-            ],
-            "description": "jQuery JavaScript Library",
-            "homepage": "http://jquery.com",
-            "support": {
-                "forum": "http://forum.jquery.com",
-                "irc": "irc://irc.freenode.org/jquery",
-                "issues": "https://github.com/jquery/jquery/issues",
-                "source": "https://github.com/jquery/jquery",
-                "wiki": "http://docs.jquery.com/"
-            },
-            "install-path": "../../../assets/composer-asset/components/jquery"
-        },
-        {
-            "name": "components/modernizr",
-            "version": "3.5.0",
-            "version_normalized": "3.5.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/components/modernizr.git",
-                "reference": "f4fc5301da393558235c8c927937ed21a5a7c344"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/components/modernizr/zipball/f4fc5301da393558235c8c927937ed21a5a7c344",
-                "reference": "f4fc5301da393558235c8c927937ed21a5a7c344",
-                "shasum": ""
-            },
-            "time": "2017-07-06T07:27:29+00:00",
-            "type": "component",
-            "extra": {
-                "component": {
-                    "shim": {
-                        "exports": "window.Modernizr"
-                    },
-                    "scripts": [
-                        "modernizr.js"
-                    ]
-                }
-            },
-            "installation-source": "dist",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Faruk Ates"
-                },
-                {
-                    "name": "Paul Irish"
-                },
-                {
-                    "name": "Alex Sexton"
-                },
-                {
-                    "name": "Ryan Seddon"
-                },
-                {
-                    "name": "Stu Cox"
-                },
-                {
-                    "name": "Patrick Kettner"
-                },
-                {
-                    "name": "Richard Herrera"
-                }
-            ],
-            "description": "Modernizr is a JavaScript library that detects HTML5 and CSS3 features in the user's browser.",
-            "homepage": "https://modernizr.com",
-            "keywords": [
-                "CSS3",
-                "HTML5",
-                "browser",
-                "feature detection"
-            ],
-            "support": {
-                "issues": "https://github.com/components/modernizr/issues",
-                "source": "https://github.com/components/modernizr/tree/master"
-            },
-            "install-path": "../../../assets/composer-asset/components/modernizr"
-        },
-        {
-            "name": "components/webfontloader",
-            "version": "1.6.3",
-            "version_normalized": "1.6.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/components/webfontloader.git",
-                "reference": "3fdb1367e4e413e26f4587bf03dff0149ad59804"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/components/webfontloader/zipball/3fdb1367e4e413e26f4587bf03dff0149ad59804",
-                "reference": "3fdb1367e4e413e26f4587bf03dff0149ad59804",
-                "shasum": ""
-            },
-            "time": "2015-06-09T19:47:15+00:00",
-            "type": "component",
-            "extra": {
-                "component": {
-                    "scripts": [
-                        "webfontloader.js"
-                    ]
-                }
-            },
-            "installation-source": "dist",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache-2.0"
-            ],
-            "description": "Web Font Loader gives you added control when using linked fonts via @font-face.",
-            "homepage": "http://github.com/components/webfontloader/",
-            "keywords": [
-                "components",
-                "webfontloader"
-            ],
-            "support": {
-                "issues": "https://github.com/components/webfontloader/issues",
-                "source": "https://github.com/components/webfontloader/tree/master"
-            },
-            "install-path": "../../../assets/composer-asset/components/webfontloader"
-        },
-        {
             "name": "erusev/parsedown",
             "version": "1.8.0",
             "version_normalized": "1.8.0.0",
@@ -814,22 +603,23 @@
         },
         {
             "name": "league/oauth2-client",
-            "version": "2.9.0",
-            "version_normalized": "2.9.0.0",
+            "version": "2.9.1",
+            "version_normalized": "2.9.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/oauth2-client.git",
-                "reference": "26e8c5da4f3d78cede7021e09b1330a0fc093d5e"
+                "reference": "8cedfef9d01a8d1fd2ecfabb41734b17592c4b71"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/oauth2-client/zipball/26e8c5da4f3d78cede7021e09b1330a0fc093d5e",
-                "reference": "26e8c5da4f3d78cede7021e09b1330a0fc093d5e",
+                "url": "https://api.github.com/repos/thephpleague/oauth2-client/zipball/8cedfef9d01a8d1fd2ecfabb41734b17592c4b71",
+                "reference": "8cedfef9d01a8d1fd2ecfabb41734b17592c4b71",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
-                "guzzlehttp/guzzle": "^6.5.8 || ^7.4.5",
+                "guzzlehttp/guzzle": "^6.5.8 || ^7.8.2 || ^8.0",
+                "guzzlehttp/psr7": "^1.9.1 || ^2.6.3 || ^3.0",
                 "php": "^7.1 || >=8.0.0 <8.6.0"
             },
             "require-dev": {
@@ -838,7 +628,7 @@
                 "phpunit/phpunit": "^7 || ^8 || ^9 || ^10 || ^11",
                 "squizlabs/php_codesniffer": "^3.11"
             },
-            "time": "2025-11-25T22:17:17+00:00",
+            "time": "2026-09-16T13:14:31+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -876,7 +666,7 @@
             ],
             "support": {
                 "issues": "https://github.com/thephpleague/oauth2-client/issues",
-                "source": "https://github.com/thephpleague/oauth2-client/tree/2.9.0"
+                "source": "https://github.com/thephpleague/oauth2-client/tree/2.9.1"
             },
             "install-path": "../league/oauth2-client"
         },
