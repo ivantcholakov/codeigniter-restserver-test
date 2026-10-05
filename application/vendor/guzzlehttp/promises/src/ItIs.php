@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace GuzzleHttp\Promise;
 
-final class Is
+final class ItIs
 {
     /**
      * Returns true if a promise is pending.

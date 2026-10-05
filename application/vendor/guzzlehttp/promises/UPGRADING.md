@@ -73,10 +73,10 @@ $promise = Create::promiseFor('value');
 | `each` | `Each::of` |
 | `each_limit` | `Each::ofLimit` |
 | `each_limit_all` | `Each::ofLimitAll` |
-| `!is_fulfilled` | `Is::pending` |
-| `is_fulfilled` | `Is::fulfilled` |
-| `is_rejected` | `Is::rejected` |
-| `is_settled` | `Is::settled` |
+| `!is_fulfilled` | `ItIs::pending` |
+| `is_fulfilled` | `ItIs::fulfilled` |
+| `is_rejected` | `ItIs::rejected` |
+| `is_settled` | `ItIs::settled` |
 | `coroutine` | `Coroutine::of` |
 
 For the full 2.0 diff, see
