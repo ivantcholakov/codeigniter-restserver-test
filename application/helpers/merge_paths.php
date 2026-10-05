@@ -8,8 +8,8 @@ if (!function_exists('merge_paths')) {
     function merge_paths($path1, $path2) {
 
         // Added by Ivan Tcholakov, 13-MAR-2016.
-        $path1 = str_replace('\\', '/', $path1);
-        $path2 = str_replace('\\', '/', $path2);
+        $path1 = str_replace('\\', '/', (string) $path1);
+        $path2 = str_replace('\\', '/', (string) $path2);
         //
 
         $p1 = explode('/', trim($path1,' /'));
@@ -21,7 +21,8 @@ if (!function_exists('merge_paths')) {
 
             if (array_slice($p1, -$len) === array_slice($p2, 0, $len)) {
 
-                return '/'
+                return
+                    '/'
                     . implode('/', array_slice($p1, 0, -$len))
                     . '/'
                     . implode('/', $p2);
